@@ -16,4 +16,6 @@ extern NSString* const PBPIncrementalStoreType;
 
 @property PBPAPI *api;
 
+@property NSManagedObjectContext *context;
+
 @end

@@ -7,20 +7,38 @@
 //
 
 #import "PBPAPI.h"
+#import "PBPAppDelegate.h"
+
+@implementation PBPAPI (Errors)
+
+-(NSError *)unknownResponseWithStatusCode:(NSUInteger)statusCode
+{
+    NSString *description = [NSString stringWithFormat:NSLocalizedString(@"The server returned a unknown response (%d)", @"The server returned a unknown response (%d)"), statusCode];
+    
+    NSError *error = [NSError errorWithDomain:PBPErrorDomain
+                                         code:100
+                                     userInfo:@{NSLocalizedDescriptionKey: description}];
+    
+    return error;
+}
+
+@end
 
 @implementation PBPAPI
 
--(NSURLSessionDataTask *)getCategories:(void (^)(NSError *, NSInteger, NSArray *))completionHandler
+-(NSArray *)getCategories:(NSError *__autoreleasing *)error
 {
     NSString *urlString = [NSString stringWithFormat:@"%@/?getcategories", self.baseURLString];
     
     NSURL *url = [NSURL URLWithString:urlString];
     
-    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    __block NSArray *categories;
+    
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *urlSessionError) {
         
         if (error) {
             
-            completionHandler(error, 0, nil);
+            *error = urlSessionError;
             
             return;
         }
@@ -29,30 +47,33 @@
         
         if (httpResponse.statusCode != 200) {
             
-            completionHandler(nil, httpResponse.statusCode, nil);
+            *error = [self unknownResponseWithStatusCode:httpResponse.statusCode];
             
             return;
         }
         
-        NSArray *categories = [NSJSONSerialization JSONObjectWithData:data
+        NSArray *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                               options:NSJSONReadingAllowFragments
                                                                 error:nil];
         
-        if (!categories && ![categories isKindOfClass:[NSArray class]]) {
+        if (!jsonObject || ![jsonObject isKindOfClass:[NSArray class]]) {
             
-            completionHandler(nil, httpResponse.statusCode, nil);
+            *error = [self unknownResponseWithStatusCode:httpResponse.statusCode];
             
             return;
         }
         
-        
-        
-        
+        categories = jsonObject;
     }];
     
-    [dataTask resume];
+    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        [dataTask resume];
+    }];
     
-    return dataTask;
+    [[[NSOperationQueue alloc] init] addOperations:@[blockOperation] waitUntilFinished:YES];
+    
+    return categories;
 }
 
 @end

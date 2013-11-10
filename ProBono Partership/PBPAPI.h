@@ -14,6 +14,6 @@
 
 @property NSString *baseURLString;
 
--(NSURLSessionDataTask *)getCategories:(void (^)(NSError *error, NSArray *categories))completionHandler;
+-(NSArray *)getCategories:(NSError **)error;
 
 @end

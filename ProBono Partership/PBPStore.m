@@ -10,6 +10,30 @@
 
 @implementation PBPStore
 
++ (PBPStore *)sharedStore
+{
+    static PBPStore *sharedStore = nil;
+    if (!sharedStore) {
+        sharedStore = [[super allocWithZone:nil] init];
+    }
+    return sharedStore;
+}
+
++ (id)allocWithZone:(NSZone *)zone
+{
+    return [self sharedStore];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        
+        
+    }
+    return self;
+}
+
 
 
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @class PBPAPI;
 
+extern NSString* const PBPErrorDomain;
+
 @interface PBPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

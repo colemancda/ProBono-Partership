@@ -8,10 +8,61 @@
 
 #import "PBPIncrementalStore.h"
 #import "PBPAPI.h"
-
-static NSString *Domain = @"com.ColemanCDA.ProBono.ErrorDomain";
+#import "PBPAppDelegate.h"
 
 NSString* const PBPIncrementalStoreType = @"PBPIncrementalStore";
+
+@implementation PBPIncrementalStore (Error)
+
+-(NSError *)invalidPredicateError
+{
+    static NSError *error;
+    
+    if (error) {
+        
+        NSString *description = NSLocalizedString(@"Invalid predicate", @"Invalid predicate");
+        
+        error = [NSError errorWithDomain:PBPErrorDomain
+                                    code:1000
+                                userInfo:@{NSLocalizedDescriptionKey : description}];
+    }
+    
+    return error;
+}
+
+-(NSError *)invalidResultTypeError
+{
+    static NSError *error;
+    
+    if (error) {
+        
+        NSString *description = NSLocalizedString(@"Invalid resultType", @"Invalid resultType");
+        
+        error = [NSError errorWithDomain:PBPErrorDomain
+                                    code:1001
+                                userInfo:@{NSLocalizedDescriptionKey : description}];
+    }
+    
+    return error;
+}
+
+-(NSError *)invalidEntityError
+{
+    static NSError *error;
+    
+    if (error) {
+        
+        NSString *description = NSLocalizedString(@"Invalid entity", @"Invalid entity");
+        
+        error = [NSError errorWithDomain:PBPErrorDomain
+                                    code:1002
+                                userInfo:@{NSLocalizedDescriptionKey : description}];
+    }
+    
+    return error;
+}
+
+@end
 
 @implementation PBPIncrementalStore
 
@@ -52,23 +103,50 @@ NSString* const PBPIncrementalStoreType = @"PBPIncrementalStore";
         NSString *description = NSLocalizedString(@"PBPIncrementalStore does not support saving",
                                                   @"Saving request not supported");
         
-        *error = [NSError errorWithDomain:Domain
+        *error = [NSError errorWithDomain:PBPErrorDomain
                                      code:0
                                  userInfo:@{NSLocalizedDescriptionKey: description}];
         
         return nil;
     }
     
-    // fetch
+    // fetch request
     
     NSFetchRequest *fetchRequest = (NSFetchRequest *)request;
     
     // fetch categories
-    if ([fetchRequest.entityName  isEqualToString:@"Category"]) {
+    if ([fetchRequest.entityName isEqualToString:@"Category"]) {
         
+        NSArray *categories = [self.api getCategories:error];
         
+        if (error) {
+            return nil;
+        }
         
+        // return results based on resultType
+        
+        if (fetchRequest.resultType == NSManagedObjectResultType) {
+            
+            for ( in categories) {
+                
+                
+            }
+            
+            
+            
+            [context objectWithID:<#(NSManagedObjectID *)#>]
+            
+        }
+        
+        *error = self.invalidResultTypeError;
+        
+        return nil;
     }
+    
+    // invalid enitity
+    *error = self.invalidEntityError;
+    
+    return nil;
     
 }
 

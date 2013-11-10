@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface PBPStore : NSObject
+{
+    NSManagedObjectContext *_context;
+    
+    
+}
+
+-(id)executeNetworkFetchRequest:(NSFetchRequest *)fetchRequest;
+
+-(id)executeCacheFetchRequest:(NSFetchRequest *)fetchRequest;
 
 @end

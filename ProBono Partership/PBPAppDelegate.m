@@ -9,6 +9,8 @@
 #import "PBPAppDelegate.h"
 #import "PBPAPI.h"
 
+NSString* const PBPErrorDomain = @"com.ColemanCDA.ProBono.ErrorDomain";
+
 @implementation PBPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
