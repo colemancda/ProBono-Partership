@@ -2,8 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Square logo non retina.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "iphone",
