@@ -8,8 +8,6 @@
 
 #import "PBPAPI.h"
 
-static NSString *APIURL = @"http://probonopartner.org/API";
-
 @implementation PBPAPI
 
 -(NSURLSessionDataTask *)getCategories:(void (^)(NSError *, NSInteger, NSArray *))completionHandler
@@ -46,6 +44,7 @@ static NSString *APIURL = @"http://probonopartner.org/API";
             
             return;
         }
+        
         
         
         

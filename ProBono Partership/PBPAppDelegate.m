@@ -19,10 +19,8 @@
     
     self.api.session = [NSURLSession sharedSession];
     
-    [self.api getCategories:^(NSInteger code, NSArray *categories) {
-        
-        
-    }];
+    self.api.baseURLString = @"http://probonopartner.org";
+    
     
     return YES;
 }

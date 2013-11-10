@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8E968F26-0EB2-4574-9DD9-EA9C83494DA5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ProBono Partership</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D76C9266-843E-4CCD-9E0D-E5565D6939B2</key>
+		<string>https://github.com/colemancda/ProBono-Partership.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ProBono Partership.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D76C9266-843E-4CCD-9E0D-E5565D6939B2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/colemancda/ProBono-Partership.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D76C9266-843E-4CCD-9E0D-E5565D6939B2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D76C9266-843E-4CCD-9E0D-E5565D6939B2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ProBono Partership</string>
+		</dict>
+	</array>
+</dict>
+</plist>
