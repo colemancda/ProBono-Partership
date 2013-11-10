@@ -9,9 +9,17 @@
 #import "PBPIncrementalStore.h"
 #import "PBPAPI.h"
 
-extern NSString const* PBPIncrementalStoreType;
+static NSString *Domain = @"com.ColemanCDA.ProBono.ErrorDomain";
+
+NSString* const PBPIncrementalStoreType = @"PBPIncrementalStore";
 
 @implementation PBPIncrementalStore
+
++(void)initialize
+{
+    [NSPersistentStoreCoordinator registerStoreClass:[self class]
+                                        forStoreType:PBPIncrementalStoreType];
+}
 
 -(BOOL)loadMetadata:(NSError *__autoreleasing *)error
 {
@@ -33,6 +41,59 @@ extern NSString const* PBPIncrementalStoreType;
     return YES;
 }
 
+-(id)executeRequest:(NSPersistentStoreRequest *)request
+        withContext:(NSManagedObjectContext *)context
+              error:(NSError *__autoreleasing *)error
+{
+    if (request.requestType == NSSaveRequestType) {
+        
+        // cannot save
+        
+        NSString *description = NSLocalizedString(@"PBPIncrementalStore does not support saving",
+                                                  @"Saving request not supported");
+        
+        *error = [NSError errorWithDomain:Domain
+                                     code:0
+                                 userInfo:@{NSLocalizedDescriptionKey: description}];
+        
+        return nil;
+    }
+    
+    // fetch
+    
+    NSFetchRequest *fetchRequest = (NSFetchRequest *)request;
+    
+    // fetch categories
+    if ([fetchRequest.entityName  isEqualToString:@"Category"]) {
+        
+        
+        
+    }
+    
+}
 
+-(NSIncrementalStoreNode *)newValuesForObjectWithID:(NSManagedObjectID *)objectID
+                                        withContext:(NSManagedObjectContext *)context
+                                              error:(NSError *__autoreleasing *)error
+{
+    
+    
+}
+
+-(id)newValueForRelationship:(NSRelationshipDescription *)relationship
+             forObjectWithID:(NSManagedObjectID *)objectID
+                 withContext:(NSManagedObjectContext *)context
+                       error:(NSError *__autoreleasing *)error
+{
+    
+    
+}
+
+-(NSArray *)obtainPermanentIDsForObjects:(NSArray *)array
+                                   error:(NSError *__autoreleasing *)error
+{
+    
+    
+}
 
 @end

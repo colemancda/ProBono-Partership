@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 @class PBPAPI;
 
-NSString const* PBPIncrementalStoreType = @"PBPIncrementalStore";
+extern NSString* const PBPIncrementalStoreType;
 
 @interface PBPIncrementalStore : NSIncrementalStore
 

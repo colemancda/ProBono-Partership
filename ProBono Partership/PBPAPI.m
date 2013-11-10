@@ -12,7 +12,7 @@
 
 -(NSURLSessionDataTask *)getCategories:(void (^)(NSError *, NSInteger, NSArray *))completionHandler
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@/?getcategories", APIURL];
+    NSString *urlString = [NSString stringWithFormat:@"%@/?getcategories", self.baseURLString];
     
     NSURL *url = [NSURL URLWithString:urlString];
     
