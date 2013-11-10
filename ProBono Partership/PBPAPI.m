@@ -8,6 +8,52 @@
 
 #import "PBPAPI.h"
 
+static NSString *APIURL = @"http://probonopartner.org/API";
+
 @implementation PBPAPI
+
+-(NSURLSessionDataTask *)getCategories:(void (^)(NSError *, NSInteger, NSArray *))completionHandler
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@/?getcategories", APIURL];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            
+            completionHandler(error, 0, nil);
+            
+            return;
+        }
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        
+        if (httpResponse.statusCode != 200) {
+            
+            completionHandler(nil, httpResponse.statusCode, nil);
+            
+            return;
+        }
+        
+        NSArray *categories = [NSJSONSerialization JSONObjectWithData:data
+                                                              options:NSJSONReadingAllowFragments
+                                                                error:nil];
+        
+        if (!categories && ![categories isKindOfClass:[NSArray class]]) {
+            
+            completionHandler(nil, httpResponse.statusCode, nil);
+            
+            return;
+        }
+        
+        
+        
+    }];
+    
+    [dataTask resume];
+    
+    return dataTask;
+}
 
 @end

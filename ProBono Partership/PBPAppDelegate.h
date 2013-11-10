@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PBPAPI;
 
 @interface PBPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property PBPAPI *api;
 
 @end

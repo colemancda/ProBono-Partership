@@ -7,6 +7,7 @@
 //
 
 #import "PBPAppDelegate.h"
+#import "PBPAPI.h"
 
 @implementation PBPAppDelegate
 
@@ -14,6 +15,14 @@
 {
     // Override point for customization after application launch.
     
+    _api = [[PBPAPI alloc] init];
+    
+    self.api.session = [NSURLSession sharedSession];
+    
+    [self.api getCategories:^(NSInteger code, NSArray *categories) {
+        
+        
+    }];
     
     return YES;
 }

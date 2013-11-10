@@ -12,6 +12,6 @@
 
 @property NSURLSession *session;
 
--(void)fetchCategories:()
+-(NSURLSessionDataTask *)getCategories:(void (^)(NSError *error, NSInteger code, NSArray *categories))completionHandler;
 
 @end

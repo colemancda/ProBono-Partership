@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
-               BuildableName = "ProBono Partership.app"
+               BuildableName = "ProBono.app"
                BlueprintName = "ProBono Partership"
                ReferencedContainer = "container:ProBono Partership.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
-            BuildableName = "ProBono Partership.app"
+            BuildableName = "ProBono.app"
             BlueprintName = "ProBono Partership"
             ReferencedContainer = "container:ProBono Partership.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
-            BuildableName = "ProBono Partership.app"
+            BuildableName = "ProBono.app"
             BlueprintName = "ProBono Partership"
             ReferencedContainer = "container:ProBono Partership.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
-            BuildableName = "ProBono Partership.app"
+            BuildableName = "ProBono.app"
             BlueprintName = "ProBono Partership"
             ReferencedContainer = "container:ProBono Partership.xcodeproj">
          </BuildableReference>
