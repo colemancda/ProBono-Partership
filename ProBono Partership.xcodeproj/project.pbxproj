@@ -21,6 +21,8 @@
 		6EAA792E182F3A05008BA55B /* ProBono_PartershipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA792D182F3A05008BA55B /* ProBono_PartershipTests.m */; };
 		6EAA7938182F3F5E008BA55B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EAA7937182F3F5E008BA55B /* MainStoryboard.storyboard */; };
 		6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793B182F40CA008BA55B /* PBPMainViewController.m */; };
+		6EAA7941182FDA43008BA55B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793F182FDA43008BA55B /* Model.xcdatamodeld */; };
+		6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA7944182FDA90008BA55B /* PBPAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6EAA7905182F3A04008BA55B /* ProBono Partership.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProBono Partership.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EAA7905182F3A04008BA55B /* ProBono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProBono.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EAA7908182F3A04008BA55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EAA790A182F3A05008BA55B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6EAA790C182F3A05008BA55B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -53,6 +55,9 @@
 		6EAA7937182F3F5E008BA55B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6EAA793A182F40CA008BA55B /* PBPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPMainViewController.h; sourceTree = "<group>"; };
 		6EAA793B182F40CA008BA55B /* PBPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPMainViewController.m; sourceTree = "<group>"; };
+		6EAA7940182FDA43008BA55B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6EAA7943182FDA90008BA55B /* PBPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPAPI.h; sourceTree = "<group>"; };
+		6EAA7944182FDA90008BA55B /* PBPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +97,7 @@
 		6EAA7906182F3A04008BA55B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EAA7905182F3A04008BA55B /* ProBono Partership.app */,
+				6EAA7905182F3A04008BA55B /* ProBono.app */,
 				6EAA7920182F3A05008BA55B /* ProBono PartershipTests.xctest */,
 			);
 			name = Products;
@@ -115,7 +120,10 @@
 				6EAA7917182F3A05008BA55B /* PBPAppDelegate.h */,
 				6EAA7918182F3A05008BA55B /* PBPAppDelegate.m */,
 				6EAA7937182F3F5E008BA55B /* MainStoryboard.storyboard */,
+				6EAA793F182FDA43008BA55B /* Model.xcdatamodeld */,
 				6EAA791A182F3A05008BA55B /* Images.xcassets */,
+				6EAA793E182FDA22008BA55B /* Models */,
+				6EAA793D182FDA1B008BA55B /* Stores */,
 				6EAA7939182F40A6008BA55B /* Controllers */,
 				6EAA790F182F3A05008BA55B /* Supporting Files */,
 			);
@@ -154,10 +162,34 @@
 		6EAA7939182F40A6008BA55B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6EAA7942182FDA62008BA55B /* View Controllers */,
+				6EAA7943182FDA90008BA55B /* PBPAPI.h */,
+				6EAA7944182FDA90008BA55B /* PBPAPI.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6EAA793D182FDA1B008BA55B /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
+		6EAA793E182FDA22008BA55B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6EAA7942182FDA62008BA55B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				6EAA793A182F40CA008BA55B /* PBPMainViewController.h */,
 				6EAA793B182F40CA008BA55B /* PBPMainViewController.m */,
 			);
-			name = Controllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +209,7 @@
 			);
 			name = "ProBono Partership";
 			productName = "ProBono Partership";
-			productReference = 6EAA7905182F3A04008BA55B /* ProBono Partership.app */;
+			productReference = 6EAA7905182F3A04008BA55B /* ProBono.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6EAA791F182F3A05008BA55B /* ProBono PartershipTests */ = {
@@ -260,9 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */,
 				6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */,
 				6EAA7915182F3A05008BA55B /* main.m in Sources */,
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
+				6EAA7941182FDA43008BA55B /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +419,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ProBono;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -399,7 +433,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ProBono;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -475,6 +509,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6EAA793F182FDA43008BA55B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6EAA7940182FDA43008BA55B /* Model.xcdatamodel */,
+			);
+			currentVersion = 6EAA7940182FDA43008BA55B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6EAA78FD182F3A04008BA55B /* Project object */;
 }
