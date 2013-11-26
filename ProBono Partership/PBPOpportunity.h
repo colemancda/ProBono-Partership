@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Category;
+@class PBPCategory;
 
 @interface PBPOpportunity : NSManagedObject
 
@@ -22,6 +22,6 @@
 @property (nonatomic, retain) NSString * matterNumber;
 @property (nonatomic, retain) NSDate * added;
 @property (nonatomic, retain) NSDate * updated;
-@property (nonatomic, retain) Category *category;
+@property (nonatomic, retain) PBPCategory *category;
 
 @end

@@ -122,7 +122,14 @@
         
         for (NSDictionary *jsonObject in jsonResponse) {
             
+            NSString *categoryIDString = jsonObject[@"categoryID"];
             
+            PBPCategory *category = (PBPCategory *)[self entity:@"PBPCategory"
+                                             withIdentifierName:@"id"
+                                                     identifier:[NSNumber numberWithInteger:categoryIDString.integerValue]];
+            
+            // set category name
+            category.name = jsonObject[@"CategoryName"];
             
         }
         

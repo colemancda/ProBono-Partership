@@ -25,8 +25,10 @@
 		6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793B182F40CA008BA55B /* PBPMainViewController.m */; };
 		6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793F182FDA43008BA55B /* PBPModel.xcdatamodeld */; };
 		6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA7944182FDA90008BA55B /* PBPAPI.m */; };
-		6EBF19CB184464AD003CF0AA /* PBPOpportunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19CA184464AD003CF0AA /* PBPOpportunity.m */; };
-		6EBF19D1184464D2003CF0AA /* PBPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D0184464D2003CF0AA /* PBPCategory.m */; };
+		6EBF19D4184468A5003CF0AA /* PBPOpportunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D3184468A5003CF0AA /* PBPOpportunity.m */; };
+		6EBF19D7184468A5003CF0AA /* PBPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D6184468A5003CF0AA /* PBPCategory.m */; };
+		6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */; };
+		6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +67,14 @@
 		6EAA7940182FDA43008BA55B /* PBPModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PBPModel.xcdatamodel; sourceTree = "<group>"; };
 		6EAA7943182FDA90008BA55B /* PBPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPAPI.h; sourceTree = "<group>"; };
 		6EAA7944182FDA90008BA55B /* PBPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPAPI.m; sourceTree = "<group>"; };
-		6EBF19C9184464AD003CF0AA /* PBPOpportunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunity.h; sourceTree = "<group>"; };
-		6EBF19CA184464AD003CF0AA /* PBPOpportunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunity.m; sourceTree = "<group>"; };
-		6EBF19CF184464D2003CF0AA /* PBPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategory.h; sourceTree = "<group>"; };
-		6EBF19D0184464D2003CF0AA /* PBPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategory.m; sourceTree = "<group>"; };
+		6EBF19D2184468A5003CF0AA /* PBPOpportunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunity.h; sourceTree = "<group>"; };
+		6EBF19D3184468A5003CF0AA /* PBPOpportunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunity.m; sourceTree = "<group>"; };
+		6EBF19D5184468A5003CF0AA /* PBPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategory.h; sourceTree = "<group>"; };
+		6EBF19D6184468A5003CF0AA /* PBPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategory.m; sourceTree = "<group>"; };
+		6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunitiesViewController.h; sourceTree = "<group>"; };
+		6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunitiesViewController.m; sourceTree = "<group>"; };
+		6EBF19DB1844698A003CF0AA /* PBPCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategoriesViewController.h; sourceTree = "<group>"; };
+		6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategoriesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,10 +200,10 @@
 		6EAA793E182FDA22008BA55B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6EBF19CF184464D2003CF0AA /* PBPCategory.h */,
-				6EBF19D0184464D2003CF0AA /* PBPCategory.m */,
-				6EBF19C9184464AD003CF0AA /* PBPOpportunity.h */,
-				6EBF19CA184464AD003CF0AA /* PBPOpportunity.m */,
+				6EBF19D5184468A5003CF0AA /* PBPCategory.h */,
+				6EBF19D6184468A5003CF0AA /* PBPCategory.m */,
+				6EBF19D2184468A5003CF0AA /* PBPOpportunity.h */,
+				6EBF19D3184468A5003CF0AA /* PBPOpportunity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -207,6 +213,10 @@
 			children = (
 				6EAA793A182F40CA008BA55B /* PBPMainViewController.h */,
 				6EAA793B182F40CA008BA55B /* PBPMainViewController.m */,
+				6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */,
+				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
+				6EBF19DB1844698A003CF0AA /* PBPCategoriesViewController.h */,
+				6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -311,12 +321,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EBF19D1184464D2003CF0AA /* PBPCategory.m in Sources */,
+				6EBF19D7184468A5003CF0AA /* PBPCategory.m in Sources */,
 				6E83836718300DD5003AE302 /* PBPStore.m in Sources */,
 				6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */,
+				6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */,
 				6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */,
 				6EAA7915182F3A05008BA55B /* main.m in Sources */,
-				6EBF19CB184464AD003CF0AA /* PBPOpportunity.m in Sources */,
+				6EBF19D4184468A5003CF0AA /* PBPOpportunity.m in Sources */,
+				6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */,
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
 				6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */,
 			);

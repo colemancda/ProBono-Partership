@@ -7,7 +7,7 @@
 //
 
 #import "PBPOpportunity.h"
-#import "Category.h"
+#import "PBPCategory.h"
 
 
 @implementation PBPOpportunity
