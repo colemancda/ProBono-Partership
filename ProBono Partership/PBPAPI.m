@@ -11,12 +11,12 @@
 
 @implementation PBPAPI (Errors)
 
--(NSError *)unknownResponseWithStatusCode:(NSUInteger)statusCode
+-(NSError *)invalidResponseWithStatusCode:(NSUInteger)statusCode
 {
-    NSString *description = [NSString stringWithFormat:NSLocalizedString(@"The server returned a unknown response (%d)", @"The server returned a unknown response (%d)"), statusCode];
+    NSString *description = [NSString stringWithFormat:NSLocalizedString(@"The server returned a invalid response (%d)", @"The server returned a invalid response (%d)"), statusCode];
     
     NSError *error = [NSError errorWithDomain:PBPErrorDomain
-                                         code:100
+                                         code:PBPAPIInvalidResponseErrorCode
                                      userInfo:@{NSLocalizedDescriptionKey: description}];
     
     return error;
@@ -26,19 +26,32 @@
 
 @implementation PBPAPI
 
--(NSArray *)getCategories:(NSError *__autoreleasing *)error
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        
+        _baseURLString = @"http://probonopartner.org";
+        
+        _session = [NSURLSession sharedSession];
+        
+    }
+    return self;
+}
+
+#pragma mark
+
+-(NSURLSessionDataTask *)getCategories:(void (^)(NSError *, NSArray *))completionBlock
 {
     NSString *urlString = [NSString stringWithFormat:@"%@/?getcategories", self.baseURLString];
     
     NSURL *url = [NSURL URLWithString:urlString];
     
-    __block NSArray *categories;
-    
-    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *urlSessionError) {
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (error) {
             
-            *error = urlSessionError;
+            completionBlock(error, nil);
             
             return;
         }
@@ -47,33 +60,54 @@
         
         if (httpResponse.statusCode != 200) {
             
-            *error = [self unknownResponseWithStatusCode:httpResponse.statusCode];
+            completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
             
             return;
         }
         
-        NSArray *jsonObject = [NSJSONSerialization JSONObjectWithData:data
+        NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data
                                                               options:NSJSONReadingAllowFragments
                                                                 error:nil];
         
-        if (!jsonObject || ![jsonObject isKindOfClass:[NSArray class]]) {
+        if (!jsonObjects || ![jsonObjects isKindOfClass:[NSArray class]]) {
             
-            *error = [self unknownResponseWithStatusCode:httpResponse.statusCode];
+            completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
             
             return;
         }
         
-        categories = jsonObject;
-    }];
-    
-    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        // validate jsonObjects
         
-        [dataTask resume];
+        for (NSDictionary *jsonObject in jsonObjects) {
+            
+            if (![jsonObjects isKindOfClass:[NSDictionary class]]) {
+                
+                completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
+                
+                return;
+            }
+            
+            NSString *categoryID = jsonObject[@"categoryID"];
+            
+            NSString *categoryName = jsonObject[@"CategoryName"];
+            
+            if (!categoryID || ![categoryID isKindOfClass:[NSString class]] ||
+                !categoryName || ![categoryName isKindOfClass:[NSString class]]) {
+                
+                completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
+                
+                return;
+            }
+        }
+        
+        
+        completionBlock(nil, jsonObjects);
+        
     }];
     
-    [[[NSOperationQueue alloc] init] addOperations:@[blockOperation] waitUntilFinished:YES];
+    [dataTask resume];
     
-    return categories;
+    return dataTask;
 }
 
 @end

@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM (NSUInteger, PBPAPIErrorCode) {
+    
+    PBPAPIInvalidResponseErrorCode
+};
+
 @interface PBPAPI : NSObject
 
-@property NSURLSession *session;
+@property (readonly) NSURLSession *session;
 
-@property NSString *baseURLString;
+@property (readonly) NSString *baseURLString;
 
--(NSArray *)getCategories:(NSError **)error;
+-(NSURLSessionDataTask *)getCategories:(void (^)(NSError *error, NSArray *categories))completionBlock;
 
 @end

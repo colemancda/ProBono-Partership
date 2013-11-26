@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6E8383611830074B003AE302 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8383601830074B003AE302 /* CoreData.framework */; };
-		6E838364183007BA003AE302 /* PBPIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E838363183007BA003AE302 /* PBPIncrementalStore.m */; };
 		6E83836718300DD5003AE302 /* PBPStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E83836618300DD5003AE302 /* PBPStore.m */; };
 		6EAA7909182F3A05008BA55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA7908182F3A04008BA55B /* Foundation.framework */; };
 		6EAA790B182F3A05008BA55B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA790A182F3A05008BA55B /* CoreGraphics.framework */; };
@@ -26,6 +25,8 @@
 		6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793B182F40CA008BA55B /* PBPMainViewController.m */; };
 		6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793F182FDA43008BA55B /* PBPModel.xcdatamodeld */; };
 		6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA7944182FDA90008BA55B /* PBPAPI.m */; };
+		6EBF19CB184464AD003CF0AA /* PBPOpportunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19CA184464AD003CF0AA /* PBPOpportunity.m */; };
+		6EBF19D1184464D2003CF0AA /* PBPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D0184464D2003CF0AA /* PBPCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,6 @@
 
 /* Begin PBXFileReference section */
 		6E8383601830074B003AE302 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6E838362183007BA003AE302 /* PBPIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPIncrementalStore.h; sourceTree = "<group>"; };
-		6E838363183007BA003AE302 /* PBPIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPIncrementalStore.m; sourceTree = "<group>"; };
 		6E83836518300DD5003AE302 /* PBPStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPStore.h; sourceTree = "<group>"; };
 		6E83836618300DD5003AE302 /* PBPStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPStore.m; sourceTree = "<group>"; };
 		6EAA7905182F3A04008BA55B /* ProBono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProBono.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +65,10 @@
 		6EAA7940182FDA43008BA55B /* PBPModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PBPModel.xcdatamodel; sourceTree = "<group>"; };
 		6EAA7943182FDA90008BA55B /* PBPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPAPI.h; sourceTree = "<group>"; };
 		6EAA7944182FDA90008BA55B /* PBPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPAPI.m; sourceTree = "<group>"; };
+		6EBF19C9184464AD003CF0AA /* PBPOpportunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunity.h; sourceTree = "<group>"; };
+		6EBF19CA184464AD003CF0AA /* PBPOpportunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunity.m; sourceTree = "<group>"; };
+		6EBF19CF184464D2003CF0AA /* PBPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategory.h; sourceTree = "<group>"; };
+		6EBF19D0184464D2003CF0AA /* PBPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +185,6 @@
 		6EAA793D182FDA1B008BA55B /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				6E838362183007BA003AE302 /* PBPIncrementalStore.h */,
-				6E838363183007BA003AE302 /* PBPIncrementalStore.m */,
 				6E83836518300DD5003AE302 /* PBPStore.h */,
 				6E83836618300DD5003AE302 /* PBPStore.m */,
 			);
@@ -193,6 +194,10 @@
 		6EAA793E182FDA22008BA55B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6EBF19CF184464D2003CF0AA /* PBPCategory.h */,
+				6EBF19D0184464D2003CF0AA /* PBPCategory.m */,
+				6EBF19C9184464AD003CF0AA /* PBPOpportunity.h */,
+				6EBF19CA184464AD003CF0AA /* PBPOpportunity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -306,11 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EBF19D1184464D2003CF0AA /* PBPCategory.m in Sources */,
 				6E83836718300DD5003AE302 /* PBPStore.m in Sources */,
 				6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */,
-				6E838364183007BA003AE302 /* PBPIncrementalStore.m in Sources */,
 				6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */,
 				6EAA7915182F3A05008BA55B /* main.m in Sources */,
+				6EBF19CB184464AD003CF0AA /* PBPOpportunity.m in Sources */,
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
 				6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */,
 			);

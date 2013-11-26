@@ -8,16 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+@class PBPAPI;
 
 @interface PBPStore : NSObject
-{
-    NSManagedObjectContext *_context;
-    
-    
-}
 
--(id)executeNetworkFetchRequest:(NSFetchRequest *)fetchRequest;
+@property (readonly) NSManagedObjectContext *context;
 
--(id)executeCacheFetchRequest:(NSFetchRequest *)fetchRequest;
+@property (readonly) PBPAPI *api;
+
+#pragma mark - Requests
+
+-(NSURLSessionDataTask *)getCategories:(void (^)(NSError *error, NSArray *categories))completionBlock;
+
 
 @end
