@@ -8,6 +8,7 @@
 
 #import "PBPAppDelegate.h"
 #import "PBPAPI.h"
+#import "PBPStore.h"
 
 NSString* const PBPErrorDomain = @"com.ColemanCDA.ProBono.ErrorDomain";
 
@@ -17,6 +18,8 @@ NSString* const PBPErrorDomain = @"com.ColemanCDA.ProBono.ErrorDomain";
 {
     // Override point for customization after application launch.
     
+    // initialize store
+    [PBPStore sharedStore];
     
     return YES;
 }

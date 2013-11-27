@@ -30,6 +30,7 @@
 		6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */; };
 		6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */; };
 		6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DF1845889D003CF0AA /* NSError+presentError.m */; };
+		6EBF19E418459550003CF0AA /* PBPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategoriesViewController.m; sourceTree = "<group>"; };
 		6EBF19DE1845889D003CF0AA /* NSError+presentError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+presentError.h"; sourceTree = "<group>"; };
 		6EBF19DF1845889D003CF0AA /* NSError+presentError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+presentError.m"; sourceTree = "<group>"; };
+		6EBF19E218459550003CF0AA /* PBPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPSettingsViewController.h; sourceTree = "<group>"; };
+		6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,8 @@
 				6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */,
 				6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */,
 				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
+				6EBF19E218459550003CF0AA /* PBPSettingsViewController.h */,
+				6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				6E83836718300DD5003AE302 /* PBPStore.m in Sources */,
 				6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */,
 				6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */,
+				6EBF19E418459550003CF0AA /* PBPSettingsViewController.m in Sources */,
 				6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */,
 				6EAA7915182F3A05008BA55B /* main.m in Sources */,
 				6EBF19D4184468A5003CF0AA /* PBPOpportunity.m in Sources */,
