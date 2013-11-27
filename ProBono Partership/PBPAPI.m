@@ -31,7 +31,7 @@
     self = [super init];
     if (self) {
         
-        _baseURLString = @"http://probonopartner.org";
+        _baseURLString = @"http://probonopartner.org/API";
         
         _session = [NSURLSession sharedSession];
         
@@ -80,14 +80,14 @@
         
         for (NSDictionary *jsonObject in jsonObjects) {
             
-            if (![jsonObjects isKindOfClass:[NSDictionary class]]) {
+            if (![jsonObject isKindOfClass:[NSDictionary class]]) {
                 
                 completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
                 
                 return;
             }
             
-            NSString *categoryID = jsonObject[@"categoryID"];
+            NSString *categoryID = jsonObject[@"Categoryid"];
             
             NSString *categoryName = jsonObject[@"CategoryName"];
             

@@ -29,6 +29,7 @@
 		6EBF19D7184468A5003CF0AA /* PBPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D6184468A5003CF0AA /* PBPCategory.m */; };
 		6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */; };
 		6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */; };
+		6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DF1845889D003CF0AA /* NSError+presentError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunitiesViewController.m; sourceTree = "<group>"; };
 		6EBF19DB1844698A003CF0AA /* PBPCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategoriesViewController.h; sourceTree = "<group>"; };
 		6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategoriesViewController.m; sourceTree = "<group>"; };
+		6EBF19DE1845889D003CF0AA /* NSError+presentError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+presentError.h"; sourceTree = "<group>"; };
+		6EBF19DF1845889D003CF0AA /* NSError+presentError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+presentError.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,7 @@
 		6EAA793E182FDA22008BA55B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6EBF19E1184588A3003CF0AA /* Categories */,
 				6EBF19D5184468A5003CF0AA /* PBPCategory.h */,
 				6EBF19D6184468A5003CF0AA /* PBPCategory.m */,
 				6EBF19D2184468A5003CF0AA /* PBPOpportunity.h */,
@@ -213,12 +217,21 @@
 			children = (
 				6EAA793A182F40CA008BA55B /* PBPMainViewController.h */,
 				6EAA793B182F40CA008BA55B /* PBPMainViewController.m */,
-				6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */,
-				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
 				6EBF19DB1844698A003CF0AA /* PBPCategoriesViewController.h */,
 				6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */,
+				6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */,
+				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6EBF19E1184588A3003CF0AA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6EBF19DE1845889D003CF0AA /* NSError+presentError.h */,
+				6EBF19DF1845889D003CF0AA /* NSError+presentError.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +343,7 @@
 				6EBF19D4184468A5003CF0AA /* PBPOpportunity.m in Sources */,
 				6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */,
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
+				6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */,
 				6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

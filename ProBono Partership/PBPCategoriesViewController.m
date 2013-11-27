@@ -7,6 +7,9 @@
 //
 
 #import "PBPCategoriesViewController.h"
+#import "PBPStore.h"
+#import "NSError+presentError.h"
+#import "PBPCategory.h"
 
 @interface PBPCategoriesViewController ()
 
@@ -34,7 +37,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,18 +45,84 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark
+
+-(void)downloadAndRefresh:(id)sender
+{
+    [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
+       
+        if (error) {
+            
+            [error presentError];
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                [self.refreshControl endRefreshing];
+                
+            }];
+            
+            return;
+        }
+        
+        [self loadCategories:categories];
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
+            [self.refreshControl endRefreshing];
+            
+        }];
+        
+    }];
+}
+
+-(void)refreshFromCache
+{
+    // get all category objects
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"PBPCategory"];
+    
+    [[PBPStore sharedStore].context performBlock:^{
+       
+        NSError *error;
+        
+        NSArray *results = [[PBPStore sharedStore].context executeFetchRequest:fetchRequest
+                                                                         error:&error];
+        
+        if (!results) {
+            
+            [NSException raise:@"Error executing fetch request"
+                        format:@"%@", error.localizedDescription];
+            
+            return;
+        }
+        
+        [self loadCategories:results];
+    }];
+}
+
+-(void)loadCategories:(NSArray *)categories
+{
+    _categories = [NSMutableArray arrayWithArray:categories];
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+       
+        [self.tableView reloadData];
+        
+    }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return _categories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,7 +130,12 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    // get model object
+    PBPCategory *category = _categories[indexPath.row];
+    
     // Configure the cell...
+    
+    cell.textLabel.text = category.name;
     
     return cell;
 }

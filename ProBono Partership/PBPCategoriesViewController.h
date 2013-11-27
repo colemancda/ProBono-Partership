@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface PBPCategoriesViewController : UITableViewController
+{
+    NSMutableArray *_categories;
+}
+
+-(void)refreshFromCache;
+
+-(IBAction)downloadAndRefresh:(id)sender;
+
+-(void)loadCategories:(NSArray *)categories;
+
 
 @end

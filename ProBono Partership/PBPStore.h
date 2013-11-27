@@ -12,6 +12,10 @@
 
 @interface PBPStore : NSObject
 
++ (PBPStore *)sharedStore;
+
+#pragma mark
+
 @property (readonly) NSManagedObjectContext *context;
 
 @property (readonly) PBPAPI *api;
