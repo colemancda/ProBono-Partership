@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PBPOpportunitiesViewController : UITableViewController
+@interface PBPOpportunitiesViewController : UIViewController
 
 @end

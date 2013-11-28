@@ -221,6 +221,51 @@
             </objects>
             <point key="canvasLocation" x="867" y="271"/>
         </scene>
+        <!--Opportunities View Controller-->
+        <scene sceneID="ea9-TJ-Zdw">
+            <objects>
+                <viewController id="lzW-XC-6Cv" customClass="PBPOpportunitiesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x3S-El-5K1"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Yh-aN-JGB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hBm-Um-0I2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CW-SK-aNr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </containerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCA-DH-0Q2">
+                                <rect key="frame" x="20" y="273" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="NCA-DH-0Q2" secondAttribute="centerX" id="19F-Bh-6Hn"/>
+                            <constraint firstAttribute="trailing" secondItem="0CW-SK-aNr" secondAttribute="trailing" id="5tJ-hb-r9q"/>
+                            <constraint firstItem="0CW-SK-aNr" firstAttribute="top" secondItem="hBm-Um-0I2" secondAttribute="top" id="9cR-xn-FvQ"/>
+                            <constraint firstItem="9Yh-aN-JGB" firstAttribute="top" secondItem="0CW-SK-aNr" secondAttribute="bottom" id="Mdo-N3-cri"/>
+                            <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="SfH-Mk-F4i"/>
+                            <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="St1-dk-jCg"/>
+                            <constraint firstItem="0CW-SK-aNr" firstAttribute="leading" secondItem="hBm-Um-0I2" secondAttribute="leading" id="bCZ-Af-9Ip"/>
+                            <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="bq6-j8-XuX"/>
+                            <constraint firstAttribute="centerX" secondItem="NCA-DH-0Q2" secondAttribute="centerX" id="kn7-av-gOl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="NCA-DH-0Q2" id="WaE-Qu-1Kh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xer-eX-YS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="473"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Square logo" width="300" height="300"/>

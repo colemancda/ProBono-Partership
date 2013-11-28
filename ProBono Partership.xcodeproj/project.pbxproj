@@ -10,6 +10,7 @@
 		6E8383611830074B003AE302 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8383601830074B003AE302 /* CoreData.framework */; };
 		6E83836718300DD5003AE302 /* PBPStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E83836618300DD5003AE302 /* PBPStore.m */; };
 		6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */; };
+		6EA00A5618470EA600733C7B /* PBPOpportunitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A5518470EA600733C7B /* PBPOpportunitiesTableViewController.m */; };
 		6EAA7909182F3A05008BA55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA7908182F3A04008BA55B /* Foundation.framework */; };
 		6EAA790B182F3A05008BA55B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA790A182F3A05008BA55B /* CoreGraphics.framework */; };
 		6EAA790D182F3A05008BA55B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA790C182F3A05008BA55B /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		6E83836618300DD5003AE302 /* PBPStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPStore.m; sourceTree = "<group>"; };
 		6EA00A511846B81A00733C7B /* PBPCategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategoriesTableViewController.h; sourceTree = "<group>"; };
 		6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategoriesTableViewController.m; sourceTree = "<group>"; };
+		6EA00A5418470EA600733C7B /* PBPOpportunitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunitiesTableViewController.h; sourceTree = "<group>"; };
+		6EA00A5518470EA600733C7B /* PBPOpportunitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunitiesTableViewController.m; sourceTree = "<group>"; };
 		6EAA7905182F3A04008BA55B /* ProBono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProBono.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EAA7908182F3A04008BA55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EAA790A182F3A05008BA55B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -229,6 +232,8 @@
 				6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */,
 				6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */,
 				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
+				6EA00A5418470EA600733C7B /* PBPOpportunitiesTableViewController.h */,
+				6EA00A5518470EA600733C7B /* PBPOpportunitiesTableViewController.m */,
 				6EBF19E218459550003CF0AA /* PBPSettingsViewController.h */,
 				6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */,
 			);
@@ -346,6 +351,7 @@
 			files = (
 				6EBF19D7184468A5003CF0AA /* PBPCategory.m in Sources */,
 				6E83836718300DD5003AE302 /* PBPStore.m in Sources */,
+				6EA00A5618470EA600733C7B /* PBPOpportunitiesTableViewController.m in Sources */,
 				6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */,
 				6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */,
 				6EBF19E418459550003CF0AA /* PBPSettingsViewController.m in Sources */,
