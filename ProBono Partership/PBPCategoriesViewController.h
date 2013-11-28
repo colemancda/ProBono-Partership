@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PBPCategoriesTableViewController;
 
-@interface PBPCategoriesViewController : UITableViewController
-{
-    NSMutableArray *_categories;
-}
+@interface PBPCategoriesViewController : UIViewController
+
+@property (readonly) PBPCategoriesTableViewController *categoriesTableVC;
+
+@property IBOutlet UILabel *label;
 
 -(void)refreshFromCache;
 
--(IBAction)downloadAndRefresh:(id)sender;
-
--(void)loadCategories:(NSArray *)categories;
+-(void)downloadAndRefresh:(id)sender;
 
 
 @end

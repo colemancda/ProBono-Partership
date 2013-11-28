@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E8383611830074B003AE302 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8383601830074B003AE302 /* CoreData.framework */; };
 		6E83836718300DD5003AE302 /* PBPStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E83836618300DD5003AE302 /* PBPStore.m */; };
+		6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */; };
 		6EAA7909182F3A05008BA55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA7908182F3A04008BA55B /* Foundation.framework */; };
 		6EAA790B182F3A05008BA55B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA790A182F3A05008BA55B /* CoreGraphics.framework */; };
 		6EAA790D182F3A05008BA55B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA790C182F3A05008BA55B /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 		6E8383601830074B003AE302 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6E83836518300DD5003AE302 /* PBPStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPStore.h; sourceTree = "<group>"; };
 		6E83836618300DD5003AE302 /* PBPStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPStore.m; sourceTree = "<group>"; };
+		6EA00A511846B81A00733C7B /* PBPCategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategoriesTableViewController.h; sourceTree = "<group>"; };
+		6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategoriesTableViewController.m; sourceTree = "<group>"; };
 		6EAA7905182F3A04008BA55B /* ProBono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProBono.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EAA7908182F3A04008BA55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EAA790A182F3A05008BA55B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -222,6 +225,8 @@
 				6EAA793B182F40CA008BA55B /* PBPMainViewController.m */,
 				6EBF19DB1844698A003CF0AA /* PBPCategoriesViewController.h */,
 				6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */,
+				6EA00A511846B81A00733C7B /* PBPCategoriesTableViewController.h */,
+				6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */,
 				6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */,
 				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
 				6EBF19E218459550003CF0AA /* PBPSettingsViewController.h */,
@@ -351,6 +356,7 @@
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
 				6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */,
 				6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */,
+				6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

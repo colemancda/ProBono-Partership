@@ -99,6 +99,34 @@
     return self;
 }
 
+#pragma mark - Cache
+
+-(NSArray *)all:(NSString *)entityName
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    
+    __block NSArray *results;
+    
+    [_context performBlockAndWait:^{
+        
+        NSError *error;
+        
+        results = [_context executeFetchRequest:fetchRequest
+                                          error:&error];
+        
+        if (!results) {
+            
+            [NSException raise:@"Error executing fetch request"
+                        format:@"%@", error.localizedDescription];
+            
+            return;
+        }
+        
+    }];
+    
+    return results;
+}
+
 #pragma mark - Requests
 
 -(NSURLSessionDataTask *)getCategories:(void (^)(NSError *, NSArray *))completionBlock

@@ -20,6 +20,10 @@
 
 @property (readonly) PBPAPI *api;
 
+#pragma mark - Cache
+
+-(NSArray *)all:(NSString *)entityName;
+
 #pragma mark - Requests
 
 -(NSURLSessionDataTask *)getCategories:(void (^)(NSError *error, NSArray *categories))completionBlock;

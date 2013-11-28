@@ -10,6 +10,7 @@
 #import "PBPStore.h"
 #import "NSError+presentError.h"
 #import "PBPCategory.h"
+#import "PBPCategoriesTableViewController.h"
 
 @interface PBPCategoriesViewController ()
 
@@ -17,32 +18,65 @@
 
 @implementation PBPCategoriesViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    // check if categories are downloaded
     
+    self.label.hidden = YES;
+    
+    NSArray *categories = [[PBPStore sharedStore] all:@"PBPCategory"];
+    
+    // if categories are downloaded
+    if (categories.count) {
+        
+        [self.categoriesTableVC loadCategories:categories];
+        
+    }
+    
+    else {
+        
+        self.label.hidden = NO;
+        
+        self.categoriesTableVC.view.hidden = YES;
+        
+        [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
+            
+            if (error) {
+                
+                [error presentError];
+                
+                return;
+            }
+            
+            [self.categoriesTableVC loadCategories:categories];
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+               
+                self.label.hidden = YES;
+                
+                self.categoriesTableVC.view.hidden = NO;
+                
+            }];
+            
+        }];
+    }
 }
 
-- (void)didReceiveMemoryWarning
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (sender == self && [segue.identifier isEqualToString:@"embeddedCategoryTableVC"]) {
+        
+        _categoriesTableVC = segue.destinationViewController;
+        
+        [_categoriesTableVC.refreshControl addTarget:self
+                                              action:@selector(downloadAndRefresh:)
+                                    forControlEvents:UIControlEventValueChanged];
+        
+    }
+    
 }
 
 #pragma mark
@@ -50,25 +84,25 @@
 -(void)downloadAndRefresh:(id)sender
 {
     [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
-       
+        
         if (error) {
             
             [error presentError];
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
-                [self.refreshControl endRefreshing];
+                [self.categoriesTableVC.refreshControl endRefreshing];
                 
             }];
             
             return;
         }
         
-        [self loadCategories:categories];
+        [self.categoriesTableVC loadCategories:categories];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
-            [self.refreshControl endRefreshing];
+            [self.categoriesTableVC.refreshControl endRefreshing];
             
         }];
         
@@ -79,116 +113,11 @@
 {
     // get all category objects
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"PBPCategory"];
+    NSArray *categories = [[PBPStore sharedStore] all:@"PBPCategory"];
     
-    [[PBPStore sharedStore].context performBlock:^{
-       
-        NSError *error;
-        
-        NSArray *results = [[PBPStore sharedStore].context executeFetchRequest:fetchRequest
-                                                                         error:&error];
-        
-        if (!results) {
-            
-            [NSException raise:@"Error executing fetch request"
-                        format:@"%@", error.localizedDescription];
-            
-            return;
-        }
-        
-        [self loadCategories:results];
-    }];
+    [self.categoriesTableVC loadCategories:categories];
 }
 
--(void)loadCategories:(NSArray *)categories
-{
-    _categories = [NSMutableArray arrayWithArray:categories];
-    
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-       
-        [self.tableView reloadData];
-        
-    }];
-}
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return _categories.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // get model object
-    PBPCategory *category = _categories[indexPath.row];
-    
-    // Configure the cell...
-    
-    cell.textLabel.text = category.name;
-    
-    return cell;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

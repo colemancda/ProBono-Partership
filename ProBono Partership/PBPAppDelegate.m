@@ -21,6 +21,8 @@ NSString* const PBPErrorDomain = @"com.ColemanCDA.ProBono.ErrorDomain";
     // initialize store
     [PBPStore sharedStore];
     
+    
+    
     return YES;
 }
 
