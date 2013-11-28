@@ -2,7 +2,7 @@
 //  PBPOpportunity.m
 //  ProBono Partership
 //
-//  Created by Alsey Coleman Miller on 11/26/13.
+//  Created by Alsey Coleman Miller on 11/28/13.
 //  Copyright (c) 2013 CDA. All rights reserved.
 //
 
@@ -12,15 +12,15 @@
 
 @implementation PBPOpportunity
 
-@dynamic client;
-@dynamic state;
-@dynamic work;
-@dynamic city;
-@dynamic position;
-@dynamic mission;
-@dynamic matterNumber;
 @dynamic added;
+@dynamic city;
+@dynamic client;
+@dynamic matterNumber;
+@dynamic mission;
+@dynamic position;
 @dynamic updated;
+@dynamic work;
 @dynamic category;
+@dynamic state;
 
 @end

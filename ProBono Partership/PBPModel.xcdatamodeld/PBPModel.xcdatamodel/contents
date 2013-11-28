@@ -12,13 +12,18 @@
         <attribute name="matterNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mission" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="work" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PBPCategory" inverseName="opportunities" inverseEntity="PBPCategory" syncable="YES"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PBPState" inverseName="opportunities" inverseEntity="PBPState" syncable="YES"/>
+    </entity>
+    <entity name="PBPState" representedClassName="PBPState" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="opportunities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PBPOpportunity" inverseName="state" inverseEntity="PBPOpportunity" syncable="YES"/>
     </entity>
     <elements>
         <element name="PBPCategory" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PBPOpportunity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PBPState" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

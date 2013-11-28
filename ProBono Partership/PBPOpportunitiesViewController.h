@@ -10,4 +10,6 @@
 
 @interface PBPOpportunitiesViewController : UIViewController
 
+@property IBOutlet UILabel *label;
+
 @end

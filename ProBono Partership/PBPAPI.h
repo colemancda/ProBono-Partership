@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const PBPAPIOpportunitiesCategoryParameter;
+
+extern NSString *const PBPAPIOpportunitiesStateParameter;
+
 typedef NS_ENUM (NSUInteger, PBPAPIErrorCode) {
     
     PBPAPIInvalidResponseErrorCode
@@ -20,5 +24,8 @@ typedef NS_ENUM (NSUInteger, PBPAPIErrorCode) {
 @property (readonly) NSString *baseURLString;
 
 -(NSURLSessionDataTask *)getCategories:(void (^)(NSError *error, NSArray *categories))completionBlock;
+
+-(NSURLSessionDataTask *)getOpportunitiesWithParameters:(NSDictionary *)parameters
+                                             completion:(void (^)(NSError *error, NSArray *opportunities))completionBlock;
 
 @end

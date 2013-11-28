@@ -11,6 +11,9 @@
 		6E83836718300DD5003AE302 /* PBPStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E83836618300DD5003AE302 /* PBPStore.m */; };
 		6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */; };
 		6EA00A5618470EA600733C7B /* PBPOpportunitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A5518470EA600733C7B /* PBPOpportunitiesTableViewController.m */; };
+		6EA00A5918479CD100733C7B /* PBPOpportunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A5818479CD100733C7B /* PBPOpportunity.m */; };
+		6EA00A5C18479CD200733C7B /* PBPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A5B18479CD200733C7B /* PBPCategory.m */; };
+		6EA00A5F18479CD200733C7B /* PBPState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA00A5E18479CD200733C7B /* PBPState.m */; };
 		6EAA7909182F3A05008BA55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA7908182F3A04008BA55B /* Foundation.framework */; };
 		6EAA790B182F3A05008BA55B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA790A182F3A05008BA55B /* CoreGraphics.framework */; };
 		6EAA790D182F3A05008BA55B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAA790C182F3A05008BA55B /* UIKit.framework */; };
@@ -27,8 +30,6 @@
 		6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793B182F40CA008BA55B /* PBPMainViewController.m */; };
 		6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793F182FDA43008BA55B /* PBPModel.xcdatamodeld */; };
 		6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA7944182FDA90008BA55B /* PBPAPI.m */; };
-		6EBF19D4184468A5003CF0AA /* PBPOpportunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D3184468A5003CF0AA /* PBPOpportunity.m */; };
-		6EBF19D7184468A5003CF0AA /* PBPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D6184468A5003CF0AA /* PBPCategory.m */; };
 		6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */; };
 		6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */; };
 		6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DF1845889D003CF0AA /* NSError+presentError.m */; };
@@ -53,6 +54,12 @@
 		6EA00A521846B81A00733C7B /* PBPCategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategoriesTableViewController.m; sourceTree = "<group>"; };
 		6EA00A5418470EA600733C7B /* PBPOpportunitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunitiesTableViewController.h; sourceTree = "<group>"; };
 		6EA00A5518470EA600733C7B /* PBPOpportunitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunitiesTableViewController.m; sourceTree = "<group>"; };
+		6EA00A5718479CD100733C7B /* PBPOpportunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunity.h; sourceTree = "<group>"; };
+		6EA00A5818479CD100733C7B /* PBPOpportunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunity.m; sourceTree = "<group>"; };
+		6EA00A5A18479CD200733C7B /* PBPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategory.h; sourceTree = "<group>"; };
+		6EA00A5B18479CD200733C7B /* PBPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategory.m; sourceTree = "<group>"; };
+		6EA00A5D18479CD200733C7B /* PBPState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPState.h; sourceTree = "<group>"; };
+		6EA00A5E18479CD200733C7B /* PBPState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPState.m; sourceTree = "<group>"; };
 		6EAA7905182F3A04008BA55B /* ProBono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProBono.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EAA7908182F3A04008BA55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EAA790A182F3A05008BA55B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,10 +82,6 @@
 		6EAA7940182FDA43008BA55B /* PBPModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PBPModel.xcdatamodel; sourceTree = "<group>"; };
 		6EAA7943182FDA90008BA55B /* PBPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPAPI.h; sourceTree = "<group>"; };
 		6EAA7944182FDA90008BA55B /* PBPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPAPI.m; sourceTree = "<group>"; };
-		6EBF19D2184468A5003CF0AA /* PBPOpportunity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunity.h; sourceTree = "<group>"; };
-		6EBF19D3184468A5003CF0AA /* PBPOpportunity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunity.m; sourceTree = "<group>"; };
-		6EBF19D5184468A5003CF0AA /* PBPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategory.h; sourceTree = "<group>"; };
-		6EBF19D6184468A5003CF0AA /* PBPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPCategory.m; sourceTree = "<group>"; };
 		6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPOpportunitiesViewController.h; sourceTree = "<group>"; };
 		6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunitiesViewController.m; sourceTree = "<group>"; };
 		6EBF19DB1844698A003CF0AA /* PBPCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPCategoriesViewController.h; sourceTree = "<group>"; };
@@ -212,11 +215,13 @@
 		6EAA793E182FDA22008BA55B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6EA00A5D18479CD200733C7B /* PBPState.h */,
+				6EA00A5E18479CD200733C7B /* PBPState.m */,
+				6EA00A5A18479CD200733C7B /* PBPCategory.h */,
+				6EA00A5B18479CD200733C7B /* PBPCategory.m */,
+				6EA00A5718479CD100733C7B /* PBPOpportunity.h */,
+				6EA00A5818479CD100733C7B /* PBPOpportunity.m */,
 				6EBF19E1184588A3003CF0AA /* Categories */,
-				6EBF19D5184468A5003CF0AA /* PBPCategory.h */,
-				6EBF19D6184468A5003CF0AA /* PBPCategory.m */,
-				6EBF19D2184468A5003CF0AA /* PBPOpportunity.h */,
-				6EBF19D3184468A5003CF0AA /* PBPOpportunity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -349,18 +354,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EBF19D7184468A5003CF0AA /* PBPCategory.m in Sources */,
 				6E83836718300DD5003AE302 /* PBPStore.m in Sources */,
 				6EA00A5618470EA600733C7B /* PBPOpportunitiesTableViewController.m in Sources */,
 				6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */,
 				6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */,
 				6EBF19E418459550003CF0AA /* PBPSettingsViewController.m in Sources */,
 				6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */,
+				6EA00A5C18479CD200733C7B /* PBPCategory.m in Sources */,
 				6EAA7915182F3A05008BA55B /* main.m in Sources */,
-				6EBF19D4184468A5003CF0AA /* PBPOpportunity.m in Sources */,
+				6EA00A5F18479CD200733C7B /* PBPState.m in Sources */,
 				6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */,
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
 				6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */,
+				6EA00A5918479CD100733C7B /* PBPOpportunity.m in Sources */,
 				6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */,
 				6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */,
 			);

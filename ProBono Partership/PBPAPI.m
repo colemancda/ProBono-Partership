@@ -110,4 +110,14 @@
     return dataTask;
 }
 
+-(NSURLSessionDataTask *)getOpportunities:(void (^)(NSError *, NSArray *))completionBlock
+{
+    NSURL *url = [NSURL URLWithString:self.baseURLString];
+    
+    
+    
+    
+    
+}
+
 @end

@@ -1,18 +1,17 @@
 //
-//  PBPCategory.m
+//  PBPState.m
 //  ProBono Partership
 //
 //  Created by Alsey Coleman Miller on 11/28/13.
 //  Copyright (c) 2013 CDA. All rights reserved.
 //
 
-#import "PBPCategory.h"
+#import "PBPState.h"
 #import "PBPOpportunity.h"
 
 
-@implementation PBPCategory
+@implementation PBPState
 
-@dynamic id;
 @dynamic name;
 @dynamic opportunities;
 
