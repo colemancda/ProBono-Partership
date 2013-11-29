@@ -22,7 +22,7 @@
         <!--Navigation Controller-->
         <scene sceneID="APD-TC-5Yg">
             <objects>
-                <navigationController definesPresentationContext="YES" id="d4u-ro-uFL" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="d4u-ro-uFL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l5S-Gn-bGK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -76,14 +76,19 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Settings" id="03R-ug-Fzn">
                         <barButtonItem key="backBarButtonItem" title="Done" id="aDT-os-y2F"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ijL-am-Ddw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ijL-am-Ddw">
+                            <connections>
+                                <segue destination="PX6-iU-yVW" kind="unwind" unwindAction="unwindToMainVC:" id="JjD-5l-EHa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQt-qE-pLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PX6-iU-yVW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1420" y="-1192"/>
         </scene>
-        <!--Main View Controller - Main Menu-->
+        <!--Main View Controller - Opportunities-->
         <scene sceneID="JNA-Rk-NZO">
             <objects>
                 <viewController id="XSr-H9-x67" customClass="PBPMainViewController" sceneMemberID="viewController">
@@ -119,10 +124,10 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Main Menu" id="Fw4-4U-vuY">
+                    <navigationItem key="navigationItem" title="Opportunities" id="Fw4-4U-vuY">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="tlR-3f-mIa">
                             <connections>
-                                <segue destination="d4u-ro-uFL" kind="modal" modalTransitionStyle="coverVertical" id="fgO-RU-Dlx"/>
+                                <segue destination="d4u-ro-uFL" kind="modal" modalTransitionStyle="flipHorizontal" id="fgO-RU-Dlx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -238,7 +243,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="OQp-JN-rXk" kind="embed" id="s06-br-vdH"/>
+                                    <segue destination="OQp-JN-rXk" kind="embed" identifier="embeddedOpportunitiesTableVC" id="s06-br-vdH"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCA-DH-0Q2">

@@ -9,6 +9,7 @@
 #import "PBPOpportunitiesViewController.h"
 #import "PBPStore.h"
 #import "NSError+presentError.h"
+#import "PBPOpportunitiesTableViewController.h"
 
 
 @interface PBPOpportunitiesViewController ()
@@ -21,10 +22,16 @@
 {
     [super viewDidLoad];
     
+    self.tableVC.view.hidden = YES;
+    
     // get categories
     [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
        
         if (error) {
+            
+            self.label.hidden = YES;
+            
+            self.tableVC.view.hidden = NO;
             
             [error presentError];
             
@@ -32,13 +39,20 @@
         }
         
         // get opportunities
-        [[PBPStore sharedStore] getOpportunitiesWithParameters:<#(NSDictionary *)#> completion:^(NSError *error, NSArray *opportunities) {
+        [[PBPStore sharedStore] getOpportunitiesWithParameters:@{} completion:^(NSError *error, NSArray *opportunities) {
             
-            self.labe
+            self.label.hidden = YES;
+            
+            self.tableVC.view.hidden = NO;
             
             if (error) {
-                <#statements#>
+                
+                [error presentError];
+                
+                return;
             }
+            
+            [self.tableVC loadOpportunities:opportunities];
             
         }];
     }];
@@ -49,6 +63,20 @@
 -(void)downloadAndRefresh:(id)sender
 {
     
+    
+    
+}
+
+#pragma mark
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"embeddedOpportunitiesTableVC"]) {
+        
+        _tableVC = segue.destinationViewController;
+        
+    }
     
 }
 
