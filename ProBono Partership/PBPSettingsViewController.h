@@ -8,16 +8,42 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString* const PBPStatesPreference;
+extern NSString* const PBPStatesPreferenceKey;
 
-extern NSString* const PBPCategoryPreference;
+extern NSString* const PBPCategoryPreferenceKey;
 
-extern NSString* const PBPFirstNamePreference;
+extern NSString* const PBPFirstNamePreferenceKey;
 
-extern NSString* const PBPLastNamePreference;
+extern NSString* const PBPLastNamePreferenceKey;
+
+extern NSString* const PBPEmailPreferenceKey;
+
+extern NSString* const PBPPreferredStatesPreferenceKey;
+
+extern NSString* const PBPPreferredCategoriesPreferenceKey;
+
+extern NSString* const PBPOpportunitiesSortingPreferenceKey;
 
 @interface PBPSettingsViewController : UITableViewController
 
+#pragma mark - Segue
+
 -(IBAction)unwindToSettingsVC:(UIStoryboardSegue *)segue;
+
+#pragma mark - UI
+
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *statesLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *categoriesLabel;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sortingSegmentedControl;
+
+#pragma mark
 
 @end

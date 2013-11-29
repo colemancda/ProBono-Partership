@@ -8,6 +8,22 @@
 
 #import "PBPSettingsViewController.h"
 
+NSString* const PBPStatesPreferenceKey = @"PBPStatesPreferenceKey";
+
+NSString* const PBPCategoryPreferenceKey = @"PBPCategoryPreferenceKey";
+
+NSString* const PBPFirstNamePreferenceKey = @"PBPFirstNamePreferenceKey";
+
+NSString* const PBPLastNamePreferenceKey = @"PBPLastNamePreferenceKey";
+
+NSString* const PBPEmailPreferenceKey = @"PBPEmailPreferenceKey";
+
+NSString* const PBPPreferredStatesPreferenceKey = @"PBPPreferredStatesPreferenceKey";
+
+NSString* const PBPPreferredCategoriesPreferenceKey = @"PBPPreferredCategoriesPreferenceKey";
+
+NSString* const PBPOpportunitiesSortingPreferenceKey = @"PBPOpportunitiesSortingPreferenceKey";
+
 @interface PBPSettingsViewController ()
 
 @end

@@ -231,6 +231,8 @@
 			children = (
 				6EAA793A182F40CA008BA55B /* PBPMainViewController.h */,
 				6EAA793B182F40CA008BA55B /* PBPMainViewController.m */,
+				6EBF19E218459550003CF0AA /* PBPSettingsViewController.h */,
+				6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */,
 				6EBF19DB1844698A003CF0AA /* PBPCategoriesViewController.h */,
 				6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */,
 				6EA00A511846B81A00733C7B /* PBPCategoriesTableViewController.h */,
@@ -239,8 +241,6 @@
 				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
 				6EA00A5418470EA600733C7B /* PBPOpportunitiesTableViewController.h */,
 				6EA00A5518470EA600733C7B /* PBPOpportunitiesTableViewController.m */,
-				6EBF19E218459550003CF0AA /* PBPSettingsViewController.h */,
-				6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
