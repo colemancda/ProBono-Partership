@@ -9,10 +9,20 @@
 #import "PBPAppDelegate.h"
 #import "PBPAPI.h"
 #import "PBPStore.h"
+#import "PBPSettingsViewController.h"
 
 NSString* const PBPErrorDomain = @"com.ColemanCDA.ProBono.ErrorDomain";
 
 @implementation PBPAppDelegate
+
++(void)initialize
+{
+    // register defaults
+    
+    NSDictionary *defaults = @{PBPOpportunitiesSortingPreferenceKey: [NSNumber numberWithInteger:PBPOpportunitiesSortingByCategory]};
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

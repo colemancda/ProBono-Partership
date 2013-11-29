@@ -7,13 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSUInteger, PBPOpportunitiesSorting) {
-    
-    PBPOpportunitiesSortingByLocation,
-    PBPOpportunitiesSortingByCategory
-    
-};
+#import "PBPSettingsViewController.h"
 
 @interface PBPOpportunitiesTableViewController : UITableViewController
 {
