@@ -126,13 +126,24 @@ NSString* const PBPOpportunitiesSortingPreferenceKey = @"OpportunitiesSorting";
     
     [self.sortingSegmentedControl setSelectedSegmentIndex:sorting];
     
-    
 }
 
 -(void)loadOpportunitiesFiltering
 {
     
     
+}
+
+#pragma mark - Actions
+
+-(void)sortingChanged:(UISegmentedControl *)sender
+{
+    // save value
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:sender.selectedSegmentIndex
+                                               forKey:PBPOpportunitiesSortingPreferenceKey];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

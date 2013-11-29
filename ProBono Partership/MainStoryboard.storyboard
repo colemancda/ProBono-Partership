@@ -200,24 +200,32 @@
                                                         <segment title="States"/>
                                                     </segments>
                                                 </segmentedControl>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sort Opportunities by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSn-8J-NRz">
-                                                    <rect key="frame" x="72" y="20" width="177" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Opportunities by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSn-8J-NRz">
+                                                    <rect key="frame" x="78" y="20" width="165" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-WE-MK1">
-                                                    <rect key="frame" x="63" y="52" width="194" height="29"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-WE-MK1">
+                                                    <rect key="frame" x="91" y="52" width="139" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
                                                         <segment title="Category"/>
                                                         <segment title="State"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="sortingChanged:" destination="bnN-dd-Kab" eventType="valueChanged" id="uar-rk-AGf"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="gWr-WE-MK1" secondAttribute="centerX" id="CQo-jk-HGH"/>
+                                                <constraint firstAttribute="centerX" secondItem="VSn-8J-NRz" secondAttribute="centerX" id="JZ2-bA-fwx"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gWr-WE-MK1" secondAttribute="bottom" constant="20" id="Vep-Md-4Jh"/>
                                                 <constraint firstAttribute="bottom" secondItem="gWr-WE-MK1" secondAttribute="bottom" constant="20" id="vjr-Av-wCa"/>
+                                                <constraint firstItem="VSn-8J-NRz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="B6E-5Q-uv1" secondAttribute="top" constant="20" id="ymM-0q-ERz"/>
                                                 <constraint firstItem="VSn-8J-NRz" firstAttribute="top" secondItem="B6E-5Q-uv1" secondAttribute="top" constant="20" id="zYD-0M-i72"/>
+                                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="gWr-WE-MK1" secondAttribute="bottom" constant="20" id="zbZ-Jm-hXw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -418,8 +426,8 @@
                                     <segue destination="OQp-JN-rXk" kind="embed" identifier="embeddedOpportunitiesTableVC" id="s06-br-vdH"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCA-DH-0Q2">
-                                <rect key="frame" x="20" y="273" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCA-DH-0Q2">
+                                <rect key="frame" x="122" y="198" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -427,7 +435,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="0ls-eY-xfB"/>
                             <constraint firstAttribute="centerX" secondItem="NCA-DH-0Q2" secondAttribute="centerX" id="19F-Bh-6Hn"/>
+                            <constraint firstAttribute="centerX" secondItem="NCA-DH-0Q2" secondAttribute="centerX" id="2W8-As-k0i"/>
                             <constraint firstAttribute="trailing" secondItem="0CW-SK-aNr" secondAttribute="trailing" id="5tJ-hb-r9q"/>
                             <constraint firstItem="0CW-SK-aNr" firstAttribute="top" secondItem="hBm-Um-0I2" secondAttribute="top" id="9cR-xn-FvQ"/>
                             <constraint firstItem="9Yh-aN-JGB" firstAttribute="top" secondItem="0CW-SK-aNr" secondAttribute="bottom" id="Mdo-N3-cri"/>

@@ -61,4 +61,8 @@ typedef NS_ENUM(NSUInteger, PBPOpportunitiesSorting) {
 
 -(void)loadOpportunitiesFiltering;
 
+#pragma mark - Actions
+
+-(IBAction)sortingChanged:(UISegmentedControl *)sender;
+
 @end
