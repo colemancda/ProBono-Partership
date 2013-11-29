@@ -15,8 +15,6 @@
 
 @property IBOutlet UILabel *label;
 
--(void)refreshFromCache;
-
 -(void)downloadAndRefresh:(id)sender;
 
 @end

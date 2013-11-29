@@ -7,6 +7,8 @@
 //
 
 #import "PBPOpportunitiesViewController.h"
+#import "PBPStore.h"
+#import "NSError+presentError.h"
 
 
 @interface PBPOpportunitiesViewController ()
@@ -19,12 +21,35 @@
 {
     [super viewDidLoad];
     
-    NSArray *loadCategories;
-    
+    // get categories
+    [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
+       
+        if (error) {
+            
+            [error presentError];
+            
+            return;
+        }
+        
+        // get opportunities
+        [[PBPStore sharedStore] getOpportunitiesWithParameters:<#(NSDictionary *)#> completion:^(NSError *error, NSArray *opportunities) {
+            
+            self.labe
+            
+            if (error) {
+                <#statements#>
+            }
+            
+        }];
+    }];
 }
 
 #pragma mark
 
-
+-(void)downloadAndRefresh:(id)sender
+{
+    
+    
+}
 
 @end

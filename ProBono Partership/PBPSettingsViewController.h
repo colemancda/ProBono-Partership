@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString* const PBPStatesPreference;
+
+extern NSString* const PBPCategoryPreference;
+
+extern NSString* const PBPFirstNamePreference;
+
+extern NSString* const PBPLastNamePreference;
+
 @interface PBPSettingsViewController : UITableViewController
 
 @end
