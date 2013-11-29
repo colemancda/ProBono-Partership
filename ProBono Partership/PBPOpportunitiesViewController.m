@@ -19,6 +19,7 @@
 {
     [super viewDidLoad];
     
+    NSArray *loadCategories;
     
 }
 

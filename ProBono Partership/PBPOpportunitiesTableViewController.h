@@ -16,6 +16,12 @@ typedef NS_ENUM(NSUInteger, PBPOpportunitiesSorting) {
 };
 
 @interface PBPOpportunitiesTableViewController : UITableViewController
+{
+    NSMutableArray *_opportunities;
+}
 
+@property PBPOpportunitiesSorting sorting;
+
+-(void)loadOpportunities:(NSArray *)opportunities;
 
 @end

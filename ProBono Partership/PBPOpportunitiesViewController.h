@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PBPOpportunitiesTableViewController;
 
 @interface PBPOpportunitiesViewController : UIViewController
 
+@property (readonly) PBPOpportunitiesTableViewController *tableVC;
+
 @property IBOutlet UILabel *label;
+
+-(void)refreshFromCache;
+
+-(void)downloadAndRefresh:(id)sender;
 
 @end

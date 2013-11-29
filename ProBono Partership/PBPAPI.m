@@ -9,6 +9,10 @@
 #import "PBPAPI.h"
 #import "PBPAppDelegate.h"
 
+NSString *const PBPAPIOpportunitiesCategoryParameter = @"PBPAPIOpportunitiesCategoryParameter";
+
+NSString *const PBPAPIOpportunitiesStateParameter = @"PBPAPIOpportunitiesStateParameter";
+
 @implementation PBPAPI (Errors)
 
 -(NSError *)invalidResponseWithStatusCode:(NSUInteger)statusCode
@@ -110,14 +114,165 @@
     return dataTask;
 }
 
--(NSURLSessionDataTask *)getOpportunities:(void (^)(NSError *, NSArray *))completionBlock
+-(NSURLSessionDataTask *)getOpportunitiesWithParameters:(NSDictionary *)parameters
+                                             completion:(void (^)(NSError *, NSArray *))completionBlock
 {
-    NSURL *url = [NSURL URLWithString:self.baseURLString];
+    NSString *urlString = self.baseURLString;
     
+    // build URL with query parameters
     
+    if (parameters.count) {
+        
+        NSString *queryString;
+        
+        // categories
+        
+        NSArray *categories = parameters[PBPAPIOpportunitiesCategoryParameter];
+        
+        if (categories.count) {
+            
+            queryString = @"Cat=";
+            
+            for (NSNumber *categoryID in categories) {
+                
+                NSString *categoryIDString = [NSString stringWithFormat:@"%@", categoryID];
+                
+                if (categoryID == categories.firstObject) {
+                    
+                    queryString = [queryString stringByAppendingString:categoryIDString];
+                }
+                
+                else {
+                    
+                    categoryIDString = [categoryIDString stringByAppendingFormat:@"|%@", categoryIDString];
+                }
+            }
+        }
+        
+        // states
+        
+        NSArray *states = parameters[PBPAPIOpportunitiesStateParameter];
+        
+        if (states.count) {
+            
+            if (queryString) {
+                
+                queryString = [queryString stringByAppendingString:@"&"];
+            }
+            
+            else {
+                
+                queryString = @"";
+            }
+            
+            [queryString stringByAppendingString:@"State="];
+            
+            for (NSString *state in states) {
+                
+                if (state == states.firstObject) {
+                    
+                    [queryString stringByAppendingString:state];
+                }
+                
+                else {
+                    
+                    [queryString stringByAppendingFormat:@"|%@", state];
+                    
+                }
+            }
+        }
+        
+        urlString = [urlString stringByAppendingFormat:@"?%@", queryString];
+        
+    }
     
+    NSURL *url = [NSURL URLWithString:urlString];
     
+    NSURLSessionDataTask *dataTask = [_session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            
+            completionBlock(error, nil);
+            
+            return;
+        }
+        
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        
+        if (httpResponse.statusCode != 200) {
+            
+            completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
+            
+            return;
+        }
+        
+        NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data
+                                                               options:NSJSONReadingAllowFragments
+                                                                 error:nil];
+        
+        if (!jsonObjects || ![jsonObjects isKindOfClass:[NSArray class]]) {
+            
+            completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
+            
+            return;
+        }
+        
+        // validate jsonObjects
+        
+        for (NSDictionary *jsonObject in jsonObjects) {
+            
+            if (![jsonObject isKindOfClass:[NSDictionary class]]) {
+                
+                completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
+                
+                return;
+            }
+            
+            NSString *position = jsonObject[@"Position"];
+            
+            NSString *category = jsonObject[@"Category"];
+            
+            NSString *city = jsonObject[@"City"];
+            
+            NSString *state = jsonObject[@"State"];
+            
+            NSString *client = jsonObject[@"Client"];
+            
+            NSString *work = jsonObject[@"Legal Work Required"];
+            
+            NSString *mission = jsonObject[@"Mission"];
+            
+            NSString *matterNumber = jsonObject[@"Matter No.:"];
+            
+            NSString *added = jsonObject[@"Added:"];
+            
+            NSString *updated = jsonObject[@"Updated:"];
+            
+            if (!position ||
+                !category ||
+                !city ||
+                !state ||
+                !client ||
+                !work ||
+                !mission ||
+                !matterNumber ||
+                !added ||
+                !updated) {
+                
+                completionBlock([self invalidResponseWithStatusCode:httpResponse.statusCode], nil);
+                
+                return;
+            }
+        }
+        
+        completionBlock(nil, jsonObjects);
+        
+    }];
     
+    [dataTask resume];
+    
+    return dataTask;
 }
 
 @end

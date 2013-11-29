@@ -10,6 +10,7 @@
 #import "PBPAPI.h"
 #import "PBPCategory.h"
 #import "PBPOpportunity.h"
+#import "PBPState.h"
 
 @implementation PBPStore (Cache)
 
@@ -166,6 +167,93 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         completionBlock(nil, categories);
+        
+    }];
+    
+    return dataTask;
+}
+
+
+-(NSURLSessionDataTask *)getOpportunitiesWithParameters:(NSDictionary *)parameters
+                                             completion:(void (^)(NSError *, NSArray *))completionBlock
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSURLSessionDataTask *dataTask = [self.api getOpportunitiesWithParameters:parameters completion:^(NSError *error, NSArray *jsonResponse) {
+        
+        if (error) {
+            
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            completionBlock(error, nil);
+            
+            return;
+        }
+        
+        NSMutableArray *opportunities = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *jsonObject in jsonResponse) {
+            
+            NSString *position = jsonObject[@"Position"];
+            
+            NSString *category = jsonObject[@"Category"];
+            
+            NSString *city = jsonObject[@"City"];
+            
+            NSString *state = jsonObject[@"State"];
+            
+            NSString *client = jsonObject[@"Client"];
+            
+            NSString *work = jsonObject[@"Legal Work Required"];
+            
+            NSString *mission = jsonObject[@"Mission"];
+            
+            NSString *matterNumber = jsonObject[@"Matter No.:"];
+            
+            NSString *added = jsonObject[@"Added:"];
+            
+            NSString *updated = jsonObject[@"Updated:"];
+            
+            PBPOpportunity *opportunity = (PBPOpportunity *)[self entity:@"PBPOpportunity"
+                                                      withIdentifierName:@"matterNumber"
+                                                              identifier:matterNumber];
+            
+            // set values
+            
+            opportunity.position = position;
+            
+            opportunity.category = (PBPCategory *)[self entity:@"PBPCategory"
+                                            withIdentifierName:@"id"
+                                                    identifier:[NSNumber numberWithInteger:category.integerValue]];
+            
+            opportunity.city = city;
+            
+            opportunity.state = (PBPState *)[self entity:@"PBPState"
+                                      withIdentifierName:@"name"
+                                              identifier:state];
+            
+            opportunity.client = client;
+            
+            opportunity.work = work;
+            
+            opportunity.mission = mission;
+            
+            static NSDateFormatter *dateFormatter;
+            
+            if (!dateFormatter) {
+                
+                dateFormatter = [[NSDateFormatter alloc] init];
+            }
+            
+            opportunity.added = [dateFormatter dateFromString:added];
+            
+            opportunity.updated = [dateFormatter dateFromString:updated];
+            
+            
+            [opportunities addObject:opportunity];
+        }
+        
+        completionBlock(nil, opportunities);
         
     }];
     

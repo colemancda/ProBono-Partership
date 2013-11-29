@@ -28,5 +28,8 @@
 
 -(NSURLSessionDataTask *)getCategories:(void (^)(NSError *error, NSArray *categories))completionBlock;
 
+-(NSURLSessionDataTask *)getOpportunitiesWithParameters:(NSDictionary *)parameters
+                                             completion:(void (^)(NSError *error, NSArray *opportunities))completionBlock;
+
 
 @end

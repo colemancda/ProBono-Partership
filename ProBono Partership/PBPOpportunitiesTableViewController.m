@@ -40,6 +40,40 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark
+
+-(void)loadOpportunities:(NSArray *)opportunities
+{
+    _opportunities = [NSMutableArray arrayWithArray:opportunities];
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+       
+        [self.tableView reloadData];
+        
+    }];
+}
+
+#pragma mark - KVO
+
+-(void)observeValueForKeyPath:(NSString *)keyPath
+                     ofObject:(id)object
+                       change:(NSDictionary *)change
+                      context:(void *)context
+{
+    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    
+    if ([keyPath isEqualToString:@"sorting"]) {
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
+            [self.tableView reloadData];
+            
+        }];
+
+    }
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
