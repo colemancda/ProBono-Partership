@@ -130,7 +130,23 @@ NSString* const PBPOpportunitiesSortingPreferenceKey = @"OpportunitiesSorting";
 
 -(void)loadOpportunitiesFiltering
 {
+    NSArray *preferredCategories = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredCategoriesPreferenceKey];
     
+    // change categories label to selected categories
+    if (preferredCategories.count) {
+        
+        
+        
+    }
+    
+    NSArray *preferredStates = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredStatesPreferenceKey];
+    
+    // change preferred states label
+    if (preferredStates.count) {
+        
+        
+        
+    }
     
 }
 

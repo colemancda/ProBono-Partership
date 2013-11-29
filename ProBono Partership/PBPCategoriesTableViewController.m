@@ -8,6 +8,7 @@
 
 #import "PBPCategoriesTableViewController.h"
 #import "PBPCategory.h"
+#import "PBPSettingsViewController.h"
 
 @interface PBPCategoriesTableViewController ()
 
@@ -76,19 +77,91 @@
     
     cell.textLabel.text = category.name;
     
+    // check if selected
+    
+    NSArray *preferredCategories = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredCategoriesPreferenceKey];
+    
+    if ([preferredCategories containsObject:category.id]) {
+        
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        
+    }
+    
     return cell;
 }
 
-
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSUInteger row = self.tableView.indexPathForSelectedRow.row;
     
+    // get model object
     
+    PBPCategory *category = _categories[row];
+    
+    // set selected
+    
+    NSArray *preferredCategories = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredCategoriesPreferenceKey];
+    
+    BOOL selected = YES;
+    
+    // none saved
+    if (!preferredCategories.count) {
+        
+        preferredCategories = @[category.id];
+    }
+    
+    else {
+        
+        // already selected
+        
+        if ([preferredCategories containsObject:category.id]) {
+            
+            // remove object
+            
+            NSMutableArray *newArray = [NSMutableArray arrayWithArray:preferredCategories];
+            
+            [newArray removeObject:category.id];
+            
+            preferredCategories = (NSArray *)newArray;
+            
+            selected = NO;
+            
+        }
+        
+        // not selected
+        else {
+            
+            preferredCategories = [preferredCategories arrayByAddingObject:category.id];
+            
+        }
+    }
+    
+    // save preferences
+    
+    [[NSUserDefaults standardUserDefaults] setObject:preferredCategories
+                                              forKey:PBPPreferredCategoriesPreferenceKey];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // reload UI
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if (selected) {
+        
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    // deselect cell with animation
+    [cell setSelected:NO animated:YES];
 }
 
 @end
