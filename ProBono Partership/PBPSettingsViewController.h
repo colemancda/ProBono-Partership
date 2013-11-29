@@ -18,4 +18,6 @@ extern NSString* const PBPLastNamePreference;
 
 @interface PBPSettingsViewController : UITableViewController
 
+-(IBAction)unwindToSettingsVC:(UIStoryboardSegue *)segue;
+
 @end

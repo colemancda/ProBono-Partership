@@ -34,6 +34,13 @@
 
 -(void)loadCategories:(NSArray *)categories
 {
+    // sort array
+    
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                           ascending:YES];
+    
+    categories = [categories sortedArrayUsingDescriptors:@[sort]];
+    
     _categories = [NSMutableArray arrayWithArray:categories];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
