@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class PBPOpportunity;
 
-@interface PBPOpportunityTableViewController : UITableViewController
+@interface PBPOpportunityTableViewController : UITableViewController <UIWebViewDelegate>
 
 @property PBPOpportunity *opportunity;
 

@@ -505,9 +505,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES" calendarEvent="YES"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="sjN-II-FZa" id="sOg-O6-ci2"/>
+                                                        <outlet property="delegate" destination="sjN-II-FZa" id="GWp-XW-Aav"/>
                                                     </connections>
                                                 </webView>
                                             </subviews>
