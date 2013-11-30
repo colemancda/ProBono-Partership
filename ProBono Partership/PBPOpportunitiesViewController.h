@@ -15,6 +15,8 @@
 
 @property IBOutlet UILabel *label;
 
+@property (weak, nonatomic) IBOutlet UIButton *retryButton;
+
 -(IBAction)downloadAndRefresh:(id)sender;
 
 -(IBAction)downloadAndLoad:(id)sender;

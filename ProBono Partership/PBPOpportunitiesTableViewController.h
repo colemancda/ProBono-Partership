@@ -11,10 +11,12 @@
 
 @interface PBPOpportunitiesTableViewController : UITableViewController
 {
-    NSMutableArray *_opportunities;
+    NSMutableArray *_groupedOpportunities;
 }
 
 @property (readonly) PBPOpportunitiesSorting sorting;
+
+@property (readonly) NSArray *opportunities;
 
 -(void)loadOpportunities:(NSArray *)opportunities
                  sorting:(PBPOpportunitiesSorting)sorting;

@@ -50,6 +50,8 @@
 {
     _sorting = sorting;
     
+    _opportunities = opportunities;
+    
     // create nsarray for each category
     
     NSMutableArray *root = [[NSMutableArray alloc] init];
@@ -143,7 +145,7 @@
         
     }
     
-    _opportunities = root;
+    _groupedOpportunities = root;
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
        
@@ -158,14 +160,14 @@
 {
     // Return the number of sections.
     
-    return _opportunities.count;
+    return _groupedOpportunities.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     
-    NSArray *opportunitiesUnderSection = _opportunities[section];
+    NSArray *opportunitiesUnderSection = _groupedOpportunities[section];
     
     return opportunitiesUnderSection.count;
 }
@@ -176,7 +178,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // get model object
-    NSArray *subOpportunities = _opportunities[indexPath.section];
+    NSArray *subOpportunities = _groupedOpportunities[indexPath.section];
     
     PBPOpportunity *opportunity = subOpportunities[indexPath.row];
     
@@ -189,7 +191,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSArray *subOpportunities = _opportunities[section];
+    NSArray *subOpportunities = _groupedOpportunities[section];
     
     // just get header from first opportunity
     PBPOpportunity *firstOpportunity = subOpportunities.firstObject;

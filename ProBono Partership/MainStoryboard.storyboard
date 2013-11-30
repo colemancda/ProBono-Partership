@@ -248,7 +248,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="03R-ug-Fzn">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="CtU-SW-CHJ">
                             <connections>
-                                <segue destination="PX6-iU-yVW" kind="unwind" unwindAction="unwindToMainVC:" id="bUZ-Xr-7OH"/>
+                                <segue destination="PX6-iU-yVW" kind="unwind" identifier="unwindToMainVCFromSettingsVC" unwindAction="unwindToMainVC:" id="bUZ-Xr-7OH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -516,24 +516,39 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5O-xV-pgN">
+                                <rect key="frame" x="142" y="237" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadAndLoad:" destination="lzW-XC-6Cv" eventType="touchUpInside" id="Y0Z-pf-qKZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="0ls-eY-xfB"/>
                             <constraint firstAttribute="centerX" secondItem="NCA-DH-0Q2" secondAttribute="centerX" id="19F-Bh-6Hn"/>
                             <constraint firstAttribute="centerX" secondItem="NCA-DH-0Q2" secondAttribute="centerX" id="2W8-As-k0i"/>
+                            <constraint firstAttribute="centerY" secondItem="R5O-xV-pgN" secondAttribute="centerY" id="5CL-ea-dtE"/>
                             <constraint firstAttribute="trailing" secondItem="0CW-SK-aNr" secondAttribute="trailing" id="5tJ-hb-r9q"/>
                             <constraint firstItem="0CW-SK-aNr" firstAttribute="top" secondItem="hBm-Um-0I2" secondAttribute="top" id="9cR-xn-FvQ"/>
+                            <constraint firstAttribute="centerX" secondItem="R5O-xV-pgN" secondAttribute="centerX" id="CTv-ur-j8E"/>
+                            <constraint firstAttribute="centerX" secondItem="R5O-xV-pgN" secondAttribute="centerX" id="IUZ-w6-wmn"/>
                             <constraint firstItem="9Yh-aN-JGB" firstAttribute="top" secondItem="0CW-SK-aNr" secondAttribute="bottom" id="Mdo-N3-cri"/>
                             <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="SfH-Mk-F4i"/>
                             <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="St1-dk-jCg"/>
                             <constraint firstItem="0CW-SK-aNr" firstAttribute="leading" secondItem="hBm-Um-0I2" secondAttribute="leading" id="bCZ-Af-9Ip"/>
+                            <constraint firstAttribute="centerY" secondItem="R5O-xV-pgN" secondAttribute="centerY" id="bar-oq-b5L"/>
                             <constraint firstAttribute="centerY" secondItem="NCA-DH-0Q2" secondAttribute="centerY" id="bq6-j8-XuX"/>
                             <constraint firstAttribute="centerX" secondItem="NCA-DH-0Q2" secondAttribute="centerX" id="kn7-av-gOl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="NCA-DH-0Q2" id="WaE-Qu-1Kh"/>
+                        <outlet property="retryButton" destination="R5O-xV-pgN" id="BB4-bo-0zh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xer-eX-YS8" userLabel="First Responder" sceneMemberID="firstResponder"/>

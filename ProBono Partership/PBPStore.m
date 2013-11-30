@@ -231,15 +231,6 @@
                                       withIdentifierName:@"name"
                                               identifier:state];
             
-            if (!opportunity.category) {
-                
-                [NSException raise:NSInternalInconsistencyException
-                            format:@"nil PBPCategory"];
-                
-                return;
-                
-            }
-            
             // set values
             
             opportunity.position = position;
@@ -268,6 +259,8 @@
             
             [opportunities addObject:opportunity];
         }
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         completionBlock(nil, opportunities);
         

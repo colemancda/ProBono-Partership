@@ -30,7 +30,73 @@
 -(void)downloadAndRefresh:(id)sender
 {
     
+    // get sorting
     
+    PBPOpportunitiesSorting sorting = [[NSUserDefaults standardUserDefaults] integerForKey:PBPOpportunitiesSortingPreferenceKey];
+    
+    // parameters
+    
+    NSArray *preferredCategories = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredCategoriesPreferenceKey];
+    
+    NSArray *preferredStates = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredStatesPreferenceKey];
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    
+    if (preferredCategories.count) {
+        
+        [parameters addEntriesFromDictionary:@{PBPAPIOpportunitiesCategoryParameter: preferredCategories}];
+    }
+    
+    if (preferredStates.count) {
+        
+        [parameters addEntriesFromDictionary:@{PBPAPIOpportunitiesStateParameter: preferredStates}];
+    }
+    
+    // get categories
+    [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
+        
+        if (error) {
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                [self.tableVC.refreshControl endRefreshing];
+                
+            }];
+            
+            [error presentError];
+            
+            return;
+        }
+        
+        // get opportunities
+        [[PBPStore sharedStore] getOpportunitiesWithParameters:parameters completion:^(NSError *error, NSArray *opportunities) {
+            
+            
+            if (error) {
+                
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    
+                    [self.tableVC.refreshControl endRefreshing];
+                    
+                }];
+                
+                [error presentError];
+                
+                return;
+            }
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                [self.tableVC.refreshControl endRefreshing];
+                
+            }];
+            
+            [self.tableVC loadOpportunities:opportunities
+                                    sorting:sorting];
+            
+        }];
+    }];
+
     
 }
 
@@ -60,14 +126,22 @@
     
     self.tableVC.view.hidden = YES;
     
+    NSBlockOperation *errorBlockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        self.label.hidden = YES;
+        
+        self.tableVC.view.hidden = YES;
+        
+        self.retryButton.hidden = NO;
+        
+    }];
+    
     // get categories
     [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
         
         if (error) {
             
-            self.label.hidden = YES;
-            
-            self.tableVC.view.hidden = NO;
+            [[NSOperationQueue mainQueue] addOperation:errorBlockOperation];
             
             [error presentError];
             
@@ -77,21 +151,25 @@
         // get opportunities
         [[PBPStore sharedStore] getOpportunitiesWithParameters:parameters completion:^(NSError *error, NSArray *opportunities) {
             
+            
+            if (error) {
+                
+                [[NSOperationQueue mainQueue] addOperation:errorBlockOperation];
+                
+                [error presentError];
+                
+                return;
+            }
+            
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                
                 self.label.hidden = YES;
                 
                 self.tableVC.view.hidden = NO;
                 
+                self.retryButton.hidden = YES;
+                
             }];
-            
-            
-            if (error) {
-                
-                [error presentError];
-                
-                return;
-            }
             
             [self.tableVC loadOpportunities:opportunities
                                     sorting:sorting];

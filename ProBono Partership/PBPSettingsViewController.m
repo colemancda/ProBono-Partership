@@ -135,7 +135,14 @@ NSString* const PBPOpportunitiesSortingPreferenceKey = @"OpportunitiesSorting";
     // change categories label to selected categories
     if (preferredCategories.count) {
         
+        self.categoriesLabel.text = NSLocalizedString(@"Selected Categories",
+                                                      @"Selected Categories");
         
+    }
+    else {
+        
+        self.categoriesLabel.text = NSLocalizedString(@"All Categories",
+                                                      @"All Categories");
         
     }
     
@@ -144,8 +151,14 @@ NSString* const PBPOpportunitiesSortingPreferenceKey = @"OpportunitiesSorting";
     // change preferred states label
     if (preferredStates.count) {
         
+        self.statesLabel.text = NSLocalizedString(@"Selected States",
+                                                  @"Selected States");
         
+    }
+    else {
         
+        self.statesLabel.text = NSLocalizedString(@"All States",
+                                                  @"All States");
     }
     
 }

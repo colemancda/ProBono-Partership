@@ -7,6 +7,8 @@
 //
 
 #import "PBPMainViewController.h"
+#import "PBPOpportunitiesViewController.h"
+#import "PBPOpportunitiesTableViewController.h"
 
 @interface PBPMainViewController ()
 
@@ -45,16 +47,22 @@
         
         _opportunitiesVC = segue.destinationViewController;
         
-        
-        
     }
     
 }
 
 -(void)unwindToMainVC:(UIStoryboardSegue *)segue
 {
-    
-    
+    if ([segue.identifier isEqualToString:@"unwindToMainVCFromSettingsVC"]) {
+        
+        // reload
+        
+        PBPOpportunitiesSorting sorting = [[NSUserDefaults standardUserDefaults] integerForKey:PBPOpportunitiesSortingPreferenceKey];
+        
+        [self.opportunitiesVC.tableVC loadOpportunities:self.opportunitiesVC.tableVC.opportunities
+                                                sorting:sorting];
+        
+    }
 }
 
 #pragma mark - Actions
