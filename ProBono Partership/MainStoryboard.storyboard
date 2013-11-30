@@ -310,7 +310,11 @@
                                 <segue destination="Wkh-gn-wBQ" kind="modal" modalTransitionStyle="coverVertical" id="DYj-o7-qsz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="znW-qT-3k3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="znW-qT-3k3">
+                            <connections>
+                                <action selector="activityAction:" destination="XSr-H9-x67" id="1Bt-s0-pq5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>

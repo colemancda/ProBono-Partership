@@ -17,7 +17,8 @@ NSString *const PBPAPIOpportunitiesStateParameter = @"PBPAPIOpportunitiesStatePa
 
 -(NSError *)invalidResponseWithStatusCode:(NSUInteger)statusCode
 {
-    NSString *description = [NSString stringWithFormat:NSLocalizedString(@"The server returned a invalid response (%d)", @"The server returned a invalid response (%d)"), statusCode];
+    NSString *description = NSLocalizedString(@"The server returned a invalid response",
+                                              @"The server returned a invalid response");
     
     NSError *error = [NSError errorWithDomain:PBPErrorDomain
                                          code:PBPAPIInvalidResponseErrorCode

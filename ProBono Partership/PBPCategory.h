@@ -2,7 +2,7 @@
 //  PBPCategory.h
 //  ProBono Partership
 //
-//  Created by Alsey Coleman Miller on 11/28/13.
+//  Created by Alsey Coleman Miller on 11/30/13.
 //  Copyright (c) 2013 CDA. All rights reserved.
 //
 
@@ -15,6 +15,14 @@
 
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) PBPOpportunity *opportunities;
+@property (nonatomic, retain) NSSet *opportunities;
+@end
+
+@interface PBPCategory (CoreDataGeneratedAccessors)
+
+- (void)addOpportunitiesObject:(PBPOpportunity *)value;
+- (void)removeOpportunitiesObject:(PBPOpportunity *)value;
+- (void)addOpportunities:(NSSet *)values;
+- (void)removeOpportunities:(NSSet *)values;
 
 @end

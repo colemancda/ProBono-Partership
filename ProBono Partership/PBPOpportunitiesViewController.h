@@ -15,8 +15,6 @@
 
 @property IBOutlet UILabel *label;
 
--(IBAction)activityAction:(id)sender;
-
 -(void)downloadAndRefresh:(id)sender;
 
 @end

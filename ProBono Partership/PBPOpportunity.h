@@ -2,14 +2,14 @@
 //  PBPOpportunity.h
 //  ProBono Partership
 //
-//  Created by Alsey Coleman Miller on 11/28/13.
+//  Created by Alsey Coleman Miller on 11/30/13.
 //  Copyright (c) 2013 CDA. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PBPCategory;
+@class PBPCategory, PBPState;
 
 @interface PBPOpportunity : NSManagedObject
 
@@ -22,6 +22,6 @@
 @property (nonatomic, retain) NSDate * updated;
 @property (nonatomic, retain) NSString * work;
 @property (nonatomic, retain) PBPCategory *category;
-@property (nonatomic, retain) NSManagedObject *state;
+@property (nonatomic, retain) PBPState *state;
 
 @end

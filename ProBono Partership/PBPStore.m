@@ -20,6 +20,8 @@
 {
     // fetch request
     
+    assert(identifier);
+    
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
     
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K == %@", identifierName, identifier];
@@ -218,19 +220,31 @@
                                                       withIdentifierName:@"matterNumber"
                                                               identifier:matterNumber];
             
-            // set values
-            
-            opportunity.position = position;
+            // relationships
             
             opportunity.category = (PBPCategory *)[self entity:@"PBPCategory"
                                             withIdentifierName:@"id"
                                                     identifier:[NSNumber numberWithInteger:category.integerValue]];
             
-            opportunity.city = city;
             
             opportunity.state = (PBPState *)[self entity:@"PBPState"
                                       withIdentifierName:@"name"
                                               identifier:state];
+            
+            if (!opportunity.category) {
+                
+                [NSException raise:NSInternalInconsistencyException
+                            format:@"nil PBPCategory"];
+                
+                return;
+                
+            }
+            
+            // set values
+            
+            opportunity.position = position;
+            
+            opportunity.city = city;
             
             opportunity.client = client;
             
@@ -243,6 +257,8 @@
             if (!dateFormatter) {
                 
                 dateFormatter = [[NSDateFormatter alloc] init];
+                
+                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             }
             
             opportunity.added = [dateFormatter dateFromString:added];

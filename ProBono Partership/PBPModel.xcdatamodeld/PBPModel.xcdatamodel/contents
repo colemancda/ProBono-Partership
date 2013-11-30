@@ -3,7 +3,7 @@
     <entity name="PBPCategory" representedClassName="PBPCategory" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="opportunities" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PBPOpportunity" inverseName="category" inverseEntity="PBPOpportunity" syncable="YES"/>
+        <relationship name="opportunities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PBPOpportunity" inverseName="category" inverseEntity="PBPOpportunity" syncable="YES"/>
     </entity>
     <entity name="PBPOpportunity" representedClassName="PBPOpportunity" syncable="YES">
         <attribute name="added" optional="YES" attributeType="Date" syncable="YES"/>

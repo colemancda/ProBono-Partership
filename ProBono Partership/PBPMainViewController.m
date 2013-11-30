@@ -45,4 +45,13 @@
     
 }
 
+#pragma mark - Actions
+
+-(IBAction)activityAction:(id)sender
+{
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] init];
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 @end

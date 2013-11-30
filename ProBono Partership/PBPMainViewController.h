@@ -12,4 +12,8 @@
 
 -(IBAction)unwindToMainVC:(UIStoryboardSegue *)segue;
 
+#pragma mark - Actions
+
+-(IBAction)activityAction:(id)sender;
+
 @end
