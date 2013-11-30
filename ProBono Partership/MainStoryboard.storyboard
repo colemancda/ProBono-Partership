@@ -289,7 +289,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="lzW-XC-6Cv" kind="embed" id="z7h-aU-6s2"/>
+                                    <segue destination="lzW-XC-6Cv" kind="embed" identifier="embedOpportunitiesVC" id="z7h-aU-6s2"/>
                                 </connections>
                             </containerView>
                         </subviews>

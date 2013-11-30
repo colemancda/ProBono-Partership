@@ -10,7 +10,7 @@
 #import "PBPStore.h"
 #import "NSError+presentError.h"
 #import "PBPOpportunitiesTableViewController.h"
-
+#import "PBPAPI.h"
 
 @interface PBPOpportunitiesViewController ()
 
@@ -22,15 +22,47 @@
 {
     [super viewDidLoad];
     
+    [self downloadAndLoad:nil];
+}
+
+#pragma mark
+
+-(void)downloadAndRefresh:(id)sender
+{
+    
+    
+    
+}
+
+-(void)downloadAndLoad:(id)sender
+{
     // get sorting
     
     PBPOpportunitiesSorting sorting = [[NSUserDefaults standardUserDefaults] integerForKey:PBPOpportunitiesSortingPreferenceKey];
+    
+    // parameters
+    
+    NSArray *preferredCategories = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredCategoriesPreferenceKey];
+    
+    NSArray *preferredStates = [[NSUserDefaults standardUserDefaults] arrayForKey:PBPPreferredStatesPreferenceKey];
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    
+    if (preferredCategories.count) {
+        
+        [parameters addEntriesFromDictionary:@{PBPAPIOpportunitiesCategoryParameter: preferredCategories}];
+    }
+    
+    if (preferredStates.count) {
+        
+        [parameters addEntriesFromDictionary:@{PBPAPIOpportunitiesStateParameter: preferredStates}];
+    }
     
     self.tableVC.view.hidden = YES;
     
     // get categories
     [[PBPStore sharedStore] getCategories:^(NSError *error, NSArray *categories) {
-       
+        
         if (error) {
             
             self.label.hidden = YES;
@@ -43,11 +75,16 @@
         }
         
         // get opportunities
-        [[PBPStore sharedStore] getOpportunitiesWithParameters:@{} completion:^(NSError *error, NSArray *opportunities) {
+        [[PBPStore sharedStore] getOpportunitiesWithParameters:parameters completion:^(NSError *error, NSArray *opportunities) {
             
-            self.label.hidden = YES;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+               
+                self.label.hidden = YES;
+                
+                self.tableVC.view.hidden = NO;
+                
+            }];
             
-            self.tableVC.view.hidden = NO;
             
             if (error) {
                 
@@ -61,13 +98,6 @@
             
         }];
     }];
-}
-
-#pragma mark
-
--(void)downloadAndRefresh:(id)sender
-{
-    
     
     
 }
@@ -80,6 +110,10 @@
     if ([segue.identifier isEqualToString:@"embeddedOpportunitiesTableVC"]) {
         
         _tableVC = segue.destinationViewController;
+        
+        [_tableVC.refreshControl addTarget:self
+                                    action:@selector(downloadAndRefresh:)
+                          forControlEvents:UIControlEventValueChanged];
         
     }
     

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PBPOpportunitiesViewController;
 
 @interface PBPMainViewController : UIViewController
+
+@property (readonly) PBPOpportunitiesViewController *opportunitiesVC;
 
 -(IBAction)unwindToMainVC:(UIStoryboardSegue *)segue;
 
