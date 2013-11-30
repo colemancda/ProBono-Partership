@@ -37,7 +37,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark
+#pragma mark - Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    
+}
 
 -(void)unwindToMainVC:(UIStoryboardSegue *)segue
 {
@@ -49,9 +55,8 @@
 
 -(IBAction)activityAction:(id)sender
 {
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] init];
     
-    [self presentViewController:activityVC animated:YES completion:nil];
+    
 }
 
 @end

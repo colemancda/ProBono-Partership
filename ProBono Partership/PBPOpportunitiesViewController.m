@@ -22,6 +22,10 @@
 {
     [super viewDidLoad];
     
+    // get sorting
+    
+    PBPOpportunitiesSorting sorting = [[NSUserDefaults standardUserDefaults] integerForKey:PBPOpportunitiesSortingPreferenceKey];
+    
     self.tableVC.view.hidden = YES;
     
     // get categories
@@ -52,7 +56,8 @@
                 return;
             }
             
-            [self.tableVC loadOpportunities:opportunities];
+            [self.tableVC loadOpportunities:opportunities
+                                    sorting:sorting];
             
         }];
     }];

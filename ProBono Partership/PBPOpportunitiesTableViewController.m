@@ -46,7 +46,10 @@
 #pragma mark
 
 -(void)loadOpportunities:(NSArray *)opportunities
+                 sorting:(PBPOpportunitiesSorting)sorting
 {
+    _sorting = sorting;
+    
     // create nsarray for each category
     
     NSMutableArray *root = [[NSMutableArray alloc] init];
@@ -63,6 +66,13 @@
             }
         }
         
+        // sort categories
+        
+        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                               ascending:YES];
+        
+        [categories sortUsingDescriptors:@[sort]];
+        
         // for each category, create nsarray
         
         for (PBPCategory *category in categories) {
@@ -76,6 +86,13 @@
                     [opportunitesUnderCategory addObject:opportunity];
                 }
             }
+            
+            // sort opportunities
+            
+            sort = [NSSortDescriptor sortDescriptorWithKey:@"added"
+                                                 ascending:NO];
+            
+            [opportunitesUnderCategory sortUsingDescriptors:@[sort]];
             
             [root addObject:opportunitesUnderCategory];
         }
@@ -83,31 +100,45 @@
     
     if (self.sorting == PBPOpportunitiesSortingByLocation) {
         
-        NSMutableArray *categories = [[NSMutableArray alloc] init];
+        NSMutableArray *states = [[NSMutableArray alloc] init];
         
         for (PBPOpportunity *opportunity in opportunities) {
             
-            if (![categories containsObject:opportunity.category]) {
+            if (![states containsObject:opportunity.state]) {
                 
-                [categories addObject:opportunity.category];
+                [states addObject:opportunity.state];
             }
         }
         
+        // sort categories
+        
+        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                               ascending:YES];
+        
+        [states sortUsingDescriptors:@[sort]];
+        
         // for each category, create nsarray
         
-        for (PBPCategory *category in categories) {
+        for (PBPState *state in states) {
             
-            NSMutableArray *opportunitesUnderCategory = [[NSMutableArray alloc] init];
+            NSMutableArray *opportunitesUnderState = [[NSMutableArray alloc] init];
             
             for (PBPOpportunity *opportunity in opportunities) {
                 
-                if (opportunity.category == category) {
+                if (opportunity.state == state) {
                     
-                    [opportunitesUnderCategory addObject:opportunity];
+                    [opportunitesUnderState addObject:opportunity];
                 }
             }
             
-            [root addObject:opportunitesUnderCategory];
+            // sort opportunities
+            
+            sort = [NSSortDescriptor sortDescriptorWithKey:@"city"
+                                                 ascending:YES];
+            
+            [opportunitesUnderState sortUsingDescriptors:@[sort]];
+            
+            [root addObject:opportunitesUnderState];
         }
         
     }
@@ -119,27 +150,6 @@
         [self.tableView reloadData];
         
     }];
-}
-
-#pragma mark - KVO
-
--(void)observeValueForKeyPath:(NSString *)keyPath
-                     ofObject:(id)object
-                       change:(NSDictionary *)change
-                      context:(void *)context
-{
-    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    
-    if ([keyPath isEqualToString:@"sorting"]) {
-        
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            
-            [self.tableView reloadData];
-            
-        }];
-
-    }
-    
 }
 
 #pragma mark - Table view data source

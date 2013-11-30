@@ -14,8 +14,9 @@
     NSMutableArray *_opportunities;
 }
 
-@property PBPOpportunitiesSorting sorting;
+@property (readonly) PBPOpportunitiesSorting sorting;
 
--(void)loadOpportunities:(NSArray *)opportunities;
+-(void)loadOpportunities:(NSArray *)opportunities
+                 sorting:(PBPOpportunitiesSorting)sorting;
 
 @end
