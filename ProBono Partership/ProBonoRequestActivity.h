@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MessageUI;
 
 extern NSString *const ProBonoRequestActivityType;
 
-@interface ProBonoRequestActivity : UIActivity
+@interface ProBonoRequestActivity : UIActivity <MFMailComposeViewControllerDelegate>
+{
+    MFMailComposeViewController *_mailVC;
+}
 
 @end

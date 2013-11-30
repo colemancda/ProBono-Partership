@@ -43,20 +43,26 @@ NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
 
 -(void)prepareWithActivityItems:(NSArray *)activityItems
 {
+    // create mail VC
     
-    
+    _mailVC = [[MFMailComposeViewController alloc] init];
 }
 
--(void)performActivity
+-(UIViewController *)activityViewController
 {
-    
-    
+    return _mailVC;
 }
 
--(void)activityDidFinish:(BOOL)completed
+#pragma mark
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     
-    
+    [controller dismissViewControllerAnimated:YES completion:^{
+        
+        
+        
+    }];
 }
 
 @end
