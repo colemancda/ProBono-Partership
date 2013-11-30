@@ -512,7 +512,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="u1D-4a-oiT" kind="embed" id="Fu6-OC-ahA"/>
+                                    <segue destination="u1D-4a-oiT" kind="embed" identifier="embeddedOpportunitiesTableVC" id="Fu6-OC-ahA"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpV-hA-NJ7">
@@ -569,6 +569,9 @@
                             <outlet property="delegate" destination="u1D-4a-oiT" id="iWZ-6y-tsk"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="2Pc-9J-faP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnk-dS-di1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

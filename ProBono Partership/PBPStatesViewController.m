@@ -24,44 +24,28 @@
     
     // check if categories are downloaded
     
-    self.label.hidden = YES;
+    self.tableVC.view.hidden = YES;
     
-    NSArray *states = [[PBPStore sharedStore] all:@"PBPState"];
-    
-    // if categories are downloaded
-    if (states.count) {
+    [[PBPStore sharedStore] getOpportunitiesWithParameters:nil completion:^(NSError *error, NSArray *opportunities) {
+        
+        if (error) {
+            
+            [error presentError];
+            
+            return;
+        }
         
         [self refreshFromCache];
         
-    }
-    
-    else {
-        
-        self.label.hidden = NO;
-        
-        self.tableVC.view.hidden = YES;
-        
-        [[PBPStore sharedStore] getOpportunitiesWithParameters:nil completion:^(NSError *error, NSArray *opportunities) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
-            if (error) {
-                
-                [error presentError];
-                
-                return;
-            }
+            self.label.hidden = YES;
             
-            [self refreshFromCache];
-            
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                
-                self.label.hidden = YES;
-                
-                self.tableVC.view.hidden = NO;
-                
-            }];
+            self.tableVC.view.hidden = NO;
             
         }];
-    }
+        
+    }];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue

@@ -202,9 +202,7 @@
     if ([segue.identifier isEqualToString:@"unwindToOpportunitiesVCFromSettingsVC"]) {
         
         // reload
-        
-        [self.tableVC.refreshControl beginRefreshing];
-        
+                
         [self downloadAndRefresh:self];
     }
 }
