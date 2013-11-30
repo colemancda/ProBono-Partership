@@ -7,6 +7,9 @@
 //
 
 #import "PBPStatesViewController.h"
+#import "PBPStatesTableViewController.h"
+#import "PBPStore.h"
+#import "NSError+presentError.h"
 
 @interface PBPStatesViewController ()
 
@@ -14,25 +17,106 @@
 
 @implementation PBPStatesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // check if categories are downloaded
+    
+    self.label.hidden = YES;
+    
+    NSArray *states = [[PBPStore sharedStore] all:@"PBPState"];
+    
+    // if categories are downloaded
+    if (states.count) {
+        
+        [self refreshFromCache];
+        
+    }
+    
+    else {
+        
+        self.label.hidden = NO;
+        
+        self.tableVC.view.hidden = YES;
+        
+        [[PBPStore sharedStore] getOpportunitiesWithParameters:nil completion:^(NSError *error, NSArray *opportunities) {
+            
+            if (error) {
+                
+                [error presentError];
+                
+                return;
+            }
+            
+            [self refreshFromCache];
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                self.label.hidden = YES;
+                
+                self.tableVC.view.hidden = NO;
+                
+            }];
+            
+        }];
+    }
 }
 
-- (void)didReceiveMemoryWarning
+-(void)prepareForSegue:(UIStoryboardSegue *)segue
+                sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (sender == self && [segue.identifier isEqualToString:@"embeddedOpportunitiesTableVC"]) {
+        
+        _tableVC = segue.destinationViewController;
+        
+        [_tableVC.refreshControl addTarget:self
+                                    action:@selector(downloadAndRefresh:)
+                          forControlEvents:UIControlEventValueChanged];
+        
+    }
+    
+}
+
+#pragma mark
+
+-(void)downloadAndRefresh:(id)sender
+{
+    [[PBPStore sharedStore] getOpportunitiesWithParameters:nil completion:^(NSError *error, NSArray *opportunities) {
+        
+        if (error) {
+            
+            [error presentError];
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                [self.tableVC.refreshControl endRefreshing];
+                
+            }];
+            
+            return;
+        }
+        
+        [self refreshFromCache];
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
+            
+            [self.tableVC.refreshControl endRefreshing];
+            
+        }];
+        
+    }];
+}
+
+-(void)refreshFromCache
+{
+    // get all state objects
+    
+    NSArray *states = [[PBPStore sharedStore] all:@"PBPState"];
+    
+    [self.tableVC loadStates:states];
 }
 
 @end

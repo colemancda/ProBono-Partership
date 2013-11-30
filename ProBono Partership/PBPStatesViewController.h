@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PBPStatesTableViewController;
 
 @interface PBPStatesViewController : UIViewController
+
+@property (readonly) PBPStatesTableViewController *tableVC;
+
+@property IBOutlet UILabel *label;
+
+-(void)refreshFromCache;
+
+-(void)downloadAndRefresh:(id)sender;
 
 @end

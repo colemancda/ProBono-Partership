@@ -495,10 +495,10 @@
             </objects>
             <point key="canvasLocation" x="1676" y="-170"/>
         </scene>
-        <!--View Controller - States-->
+        <!--States View Controller - States-->
         <scene sceneID="M6u-l1-KHg">
             <objects>
-                <viewController id="be5-i3-QcW" sceneMemberID="viewController">
+                <viewController id="be5-i3-QcW" customClass="PBPStatesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rdU-UF-aN7"/>
                         <viewControllerLayoutGuide type="bottom" id="R1U-ah-qyn"/>
@@ -529,15 +529,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="States" id="9YJ-oy-Rwh"/>
+                    <connections>
+                        <outlet property="label" destination="RpV-hA-NJ7" id="PoR-IW-ba2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8x-BH-C1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1739" y="-1545"/>
         </scene>
-        <!--Table View Controller-->
+        <!--States Table View Controller-->
         <scene sceneID="9Ih-Mz-F5L">
             <objects>
-                <tableViewController id="u1D-4a-oiT" sceneMemberID="viewController">
+                <tableViewController id="u1D-4a-oiT" customClass="PBPStatesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4iI-4c-9Ox">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

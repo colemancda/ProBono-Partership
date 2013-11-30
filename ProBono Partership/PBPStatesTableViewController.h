@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PBPStatesTableViewController : UITableViewController
+{
+    NSMutableArray *_states;
+}
+
+-(void)loadStates:(NSArray *)states;
 
 @end
