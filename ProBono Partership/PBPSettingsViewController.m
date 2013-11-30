@@ -52,11 +52,11 @@ NSString* const PBPOpportunitiesSortingPreferenceKey = @"OpportunitiesSorting";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Segue
-
--(void)unwindToSettingsVC:(UIStoryboardSegue *)segue
+-(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     
+    [self loadUIFromPreferences];
     
 }
 

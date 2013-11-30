@@ -27,7 +27,6 @@
 		6EAA792C182F3A05008BA55B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EAA792A182F3A05008BA55B /* InfoPlist.strings */; };
 		6EAA792E182F3A05008BA55B /* ProBono_PartershipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA792D182F3A05008BA55B /* ProBono_PartershipTests.m */; };
 		6EAA7938182F3F5E008BA55B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EAA7937182F3F5E008BA55B /* MainStoryboard.storyboard */; };
-		6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793B182F40CA008BA55B /* PBPMainViewController.m */; };
 		6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA793F182FDA43008BA55B /* PBPModel.xcdatamodeld */; };
 		6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA7944182FDA90008BA55B /* PBPAPI.m */; };
 		6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */; };
@@ -77,8 +76,6 @@
 		6EAA792B182F3A05008BA55B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6EAA792D182F3A05008BA55B /* ProBono_PartershipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProBono_PartershipTests.m; sourceTree = "<group>"; };
 		6EAA7937182F3F5E008BA55B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6EAA793A182F40CA008BA55B /* PBPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPMainViewController.h; sourceTree = "<group>"; };
-		6EAA793B182F40CA008BA55B /* PBPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPMainViewController.m; sourceTree = "<group>"; };
 		6EAA7940182FDA43008BA55B /* PBPModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PBPModel.xcdatamodel; sourceTree = "<group>"; };
 		6EAA7943182FDA90008BA55B /* PBPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPAPI.h; sourceTree = "<group>"; };
 		6EAA7944182FDA90008BA55B /* PBPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPAPI.m; sourceTree = "<group>"; };
@@ -229,8 +226,6 @@
 		6EAA7942182FDA62008BA55B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6EAA793A182F40CA008BA55B /* PBPMainViewController.h */,
-				6EAA793B182F40CA008BA55B /* PBPMainViewController.m */,
 				6EBF19D818446952003CF0AA /* PBPOpportunitiesViewController.h */,
 				6EBF19D918446952003CF0AA /* PBPOpportunitiesViewController.m */,
 				6EA00A5418470EA600733C7B /* PBPOpportunitiesTableViewController.h */,
@@ -359,7 +354,6 @@
 				6EAA7945182FDA90008BA55B /* PBPAPI.m in Sources */,
 				6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */,
 				6EBF19E418459550003CF0AA /* PBPSettingsViewController.m in Sources */,
-				6EAA793C182F40CA008BA55B /* PBPMainViewController.m in Sources */,
 				6EAA7915182F3A05008BA55B /* main.m in Sources */,
 				6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */,
 				6E93F79E1849CBB4001497A7 /* PBPState.m in Sources */,

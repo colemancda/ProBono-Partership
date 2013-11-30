@@ -197,4 +197,16 @@
     
 }
 
+-(void)unwindToOpportunitiesVC:(UIStoryboardSegue *)segue
+{
+    if ([segue.identifier isEqualToString:@"unwindToOpportunitiesVCFromSettingsVC"]) {
+        
+        // reload
+        
+        [self.tableVC.refreshControl beginRefreshing];
+        
+        [self downloadAndRefresh:self];
+    }
+}
+
 @end

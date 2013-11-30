@@ -33,10 +33,6 @@ typedef NS_ENUM(NSUInteger, PBPOpportunitiesSorting) {
 
 @interface PBPSettingsViewController : UITableViewController <UITextFieldDelegate>
 
-#pragma mark - Segue
-
--(IBAction)unwindToSettingsVC:(UIStoryboardSegue *)segue;
-
 #pragma mark - UI
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
