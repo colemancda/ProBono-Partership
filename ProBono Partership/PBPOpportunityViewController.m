@@ -8,6 +8,7 @@
 
 #import "PBPOpportunityViewController.h"
 #import "PBPOpportunityTableViewController.h"
+#import "ProBonoRequestActivity.h"
 
 @interface PBPOpportunityViewController ()
 
@@ -45,7 +46,9 @@
 
 -(void)actionButton:(id)sender
 {
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tableVC.opportunity] applicationActivities:nil];
+    ProBonoRequestActivity *requestActivity = [[ProBonoRequestActivity alloc] init];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tableVC.opportunity] applicationActivities:@[requestActivity]];
     
     [self presentViewController:activityVC animated:YES completion:^{
        

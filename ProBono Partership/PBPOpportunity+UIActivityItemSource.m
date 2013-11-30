@@ -7,6 +7,9 @@
 //
 
 #import "PBPOpportunity+UIActivityItemSource.h"
+#import "PBPState.h"
+#import "PBPCategory.h"
+#import "ProBonoRequestActivity.h"
 
 @implementation PBPOpportunity (UIActivityItemSource)
 
@@ -15,9 +18,45 @@
     return [NSString string];
 }
 
--(id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
+-(id)activityViewController:(UIActivityViewController *)activityViewController
+        itemForActivityType:(NSString *)activityType
 {
-    return self.work;
+    // defualt
+    
+    NSString *text = self.work;
+    
+    if ([activityType isEqualToString:UIActivityTypePostToTwitter]) {
+        
+        text = [NSString stringWithFormat:@"%@ @PBPartnership", self.work];
+        
+        return text;
+        
+    }
+    
+    if ([activityType isEqualToString:UIActivityTypePostToFacebook]) {
+        
+        text = [NSString stringWithFormat:NSLocalizedString(@"%@\n%@, %@", @"Facebook representation of PBPOpportuntity"), self.work, self.city, self.state.name];
+        
+        return text;
+    }
+    
+    if ([activityType isEqualToString:ProBonoRequestActivityType]) {
+        
+        return self;
+    }
+    
+    // for all others
+    
+    text = [NSString stringWithFormat:NSLocalizedString(@"Client: %@\nWork: %@\nCategory: %@\n Location: %@, %@\nMatter Number: %@", @"Default representation of PBPOpportunity"), self.client, self.work, self.category.name, self.city, self.state.name, self.matterNumber];
+    
+    return text;
+}
+
+-(NSString *)activityViewController:(UIActivityViewController *)activityViewController subjectForActivityType:(NSString *)activityType
+{
+    NSString *text = [NSString stringWithFormat:NSLocalizedString(@"ProBono Partnership Volunteer Opportunity with %@",@"ProBono Partnership Volunteer Opportunity <Client Name>"), self.client];
+    
+    return text;
 }
 
 
