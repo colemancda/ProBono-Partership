@@ -15,4 +15,6 @@
 
 -(IBAction)actionButton:(id)sender;
 
+@property PBPOpportunity *opportunity;
+
 @end

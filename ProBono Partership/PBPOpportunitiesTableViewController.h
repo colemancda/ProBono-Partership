@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PBPSettingsViewController.h"
 
-@interface PBPOpportunitiesTableViewController : UITableViewController
+@interface PBPOpportunitiesTableViewController : UITableViewController <UIWebViewDelegate>
 {
     NSMutableArray *_groupedOpportunities;
 }

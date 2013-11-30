@@ -36,6 +36,8 @@
         
         _tableVC = segue.destinationViewController;
         
+        _tableVC.opportunity = self.opportunity;
+        
     }
 }
 

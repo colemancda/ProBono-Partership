@@ -453,14 +453,38 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="bG2-Xb-meQ" detailTextLabel="icr-sU-Iwa" style="IBUITableViewCellStyleSubtitle" id="4e7-V9-dJn">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4e7-V9-dJn" id="F6B-xP-IBa">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="E-Commerce" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bG2-Xb-meQ">
+                                                    <rect key="frame" x="15" y="3" width="107" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="icr-sU-Iwa">
+                                                    <rect key="frame" x="15" y="25" width="51" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gE4-Is-FIw" rowHeight="92" style="IBUITableViewCellStyleDefault" id="rNW-CA-yQ8">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="92"/>
+                                        <rect key="frame" x="0.0" y="220" width="320" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rNW-CA-yQ8" id="tYe-gk-bv1">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Work" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gE4-Is-FIw">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Work" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="gE4-Is-FIw">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="91"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -471,7 +495,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="109" id="cYd-LT-NTv">
-                                        <rect key="frame" x="0.0" y="268" width="320" height="109"/>
+                                        <rect key="frame" x="0.0" y="312" width="320" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cYd-LT-NTv" id="Axs-5G-bp9">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
@@ -481,7 +505,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES" calendarEvent="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="sjN-II-FZa" id="sOg-O6-ci2"/>
+                                                    </connections>
                                                 </webView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -494,6 +521,15 @@
                             <outlet property="delegate" destination="sjN-II-FZa" id="0Ch-AL-LJC"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="categoryTextField" destination="bG2-Xb-meQ" id="Bqu-PB-8LZ"/>
+                        <outlet property="cityTextField" destination="axY-EX-fHz" id="dZG-fQ-nfr"/>
+                        <outlet property="clientTextField" destination="zzT-DE-rTp" id="UCK-Uo-WnG"/>
+                        <outlet property="matterNumberTextField" destination="MR7-0I-Pp1" id="2Kg-Bj-9dU"/>
+                        <outlet property="missionWebView" destination="4gr-6r-eKp" id="TCZ-NF-OMe"/>
+                        <outlet property="stateTextField" destination="UsT-1y-u0y" id="YW4-sr-GfE"/>
+                        <outlet property="workTextField" destination="gE4-Is-FIw" id="yN5-WK-YTu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLj-wV-IFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,12 +11,24 @@
 
 @interface PBPOpportunityTableViewController : UITableViewController
 
-@property (readonly) PBPOpportunity *opportunity;
-
--(void)loadOpportunity:(PBPOpportunity *)opportunity;
+@property PBPOpportunity *opportunity;
 
 #pragma mark - UI
 
+@property (weak, nonatomic) IBOutlet UILabel *matterNumberTextField;
 
+@property (weak, nonatomic) IBOutlet UILabel *clientTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *cityTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *stateTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *categoryTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *workTextField;
+
+@property (weak, nonatomic) IBOutlet UIWebView *missionWebView;
+
+-(void)loadUI;
 
 @end

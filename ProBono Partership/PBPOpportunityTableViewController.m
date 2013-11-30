@@ -7,6 +7,9 @@
 //
 
 #import "PBPOpportunityTableViewController.h"
+#import "PBPOpportunity.h"
+#import "PBPState.h"
+#import "PBPCategory.h"
 
 @interface PBPOpportunityTableViewController ()
 
@@ -18,17 +21,24 @@
 {
     [super viewDidLoad];
 
-    
+    [self loadUI];
 }
 
-#pragma mark
-
--(void)loadOpportunity:(PBPOpportunity *)opportunity
+-(void)loadUI
 {
-    _opportunity = opportunity;
+    self.matterNumberTextField.text = self.opportunity.matterNumber;
     
-    // set UI
+    self.clientTextField.text = self.opportunity.client;
     
+    self.cityTextField.text = self.opportunity.city;
+    
+    self.stateTextField.text = self.opportunity.state.name;
+    
+    self.categoryTextField.text = self.opportunity.category.name;
+    
+    self.workTextField.text = self.opportunity.work;
+    
+    [self.missionWebView loadHTMLString:self.opportunity.mission baseURL:nil];
 }
 
 
