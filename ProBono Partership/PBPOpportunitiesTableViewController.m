@@ -10,6 +10,8 @@
 #import "PBPOpportunity.h"
 #import "PBPCategory.h"
 #import "PBPState.h"
+#import "PBPOpportunityViewController.h"
+#import "PBPOpportunityTableViewController.h"
 
 @interface PBPOpportunitiesTableViewController ()
 
@@ -217,6 +219,20 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"PushOpportunityVC"]) {
+        
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        
+        // get model object
+        NSArray *subOpportunities = _groupedOpportunities[indexPath.section];
+        
+        PBPOpportunity *opportunity = subOpportunities[indexPath.row];
+        
+        PBPOpportunityViewController *opportunityVC = segue.destinationViewController;
+        
+        [opportunityVC.tableVC loadOpportunity:opportunity];
+    }
 }
 
 @end

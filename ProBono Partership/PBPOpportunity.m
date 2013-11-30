@@ -10,6 +10,7 @@
 #import "PBPCategory.h"
 #import "PBPState.h"
 
+#import "PBPOpportunity+UIActivityItemSource.m"
 
 @implementation PBPOpportunity
 

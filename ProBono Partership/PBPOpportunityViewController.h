@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PBPOpportunity, PBPOpportunityTableViewController;
 
 @interface PBPOpportunityViewController : UIViewController
+
+@property (readonly) PBPOpportunityTableViewController *tableVC;
+
+-(IBAction)actionButton:(id)sender;
 
 @end

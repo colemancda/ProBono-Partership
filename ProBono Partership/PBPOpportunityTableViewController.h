@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PBPOpportunity;
 
 @interface PBPOpportunityTableViewController : UITableViewController
+
+@property (readonly) PBPOpportunity *opportunity;
+
+-(void)loadOpportunity:(PBPOpportunity *)opportunity;
+
+#pragma mark - UI
+
+
 
 @end

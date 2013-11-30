@@ -21,5 +21,15 @@
     
 }
 
+#pragma mark
+
+-(void)loadOpportunity:(PBPOpportunity *)opportunity
+{
+    _opportunity = opportunity;
+    
+    // set UI
+    
+}
+
 
 @end
