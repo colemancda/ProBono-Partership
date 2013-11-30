@@ -67,6 +67,15 @@
     
 }
 
+#pragma mark - Actions
+
+-(void)activityAction:(id)sender
+{
+    
+    
+    
+}
+
 #pragma mark
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue

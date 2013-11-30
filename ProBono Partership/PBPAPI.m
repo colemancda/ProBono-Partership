@@ -207,6 +207,44 @@ NSString *const PBPAPIOpportunitiesStateParameter = @"PBPAPIOpportunitiesStatePa
             return;
         }
         
+        NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        // the JSON response is crap, it doesnt escape quotes, need to escape quotes
+        
+        // replace " with \"
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\""
+                                                           withString:@"\\\""];
+        
+        // dont escape special json quotes
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"{\\\""
+                                                           withString:@"{\""];
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"}\\\""
+                                                           withString:@"}\""];
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@":\\\""
+                                                           withString:@":\""];
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\\\":"
+                                                           withString:@"\":"];
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@",\\\""
+                                                           withString:@",\""];
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\\\","
+                                                           withString:@"\","];
+        
+        // for Updated: key "\"
+        
+        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\"\\\""
+                                                           withString:@"\"\""];
+        
+        // reserialize
+        
+        data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        
         NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data
                                                                options:NSJSONReadingAllowFragments
                                                                  error:nil];
