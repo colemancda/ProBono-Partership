@@ -477,17 +477,17 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gE4-Is-FIw" rowHeight="92" style="IBUITableViewCellStyleDefault" id="rNW-CA-yQ8">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="92"/>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workCell" textLabel="gE4-Is-FIw" rowHeight="40" style="IBUITableViewCellStyleDefault" id="rNW-CA-yQ8">
+                                        <rect key="frame" x="0.0" y="220" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rNW-CA-yQ8" id="tYe-gk-bv1">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Work" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="gE4-Is-FIw">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="91"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Work text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="gE4-Is-FIw">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="39"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -495,7 +495,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="109" id="cYd-LT-NTv">
-                                        <rect key="frame" x="0.0" y="312" width="320" height="109"/>
+                                        <rect key="frame" x="0.0" y="260" width="320" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cYd-LT-NTv" id="Axs-5G-bp9">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
@@ -528,7 +528,7 @@
                         <outlet property="matterNumberTextField" destination="MR7-0I-Pp1" id="2Kg-Bj-9dU"/>
                         <outlet property="missionWebView" destination="4gr-6r-eKp" id="TCZ-NF-OMe"/>
                         <outlet property="stateTextField" destination="UsT-1y-u0y" id="YW4-sr-GfE"/>
-                        <outlet property="workTextField" destination="gE4-Is-FIw" id="yN5-WK-YTu"/>
+                        <outlet property="workTextField" destination="gE4-Is-FIw" id="CnT-n8-B6l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLj-wV-IFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -756,10 +756,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OGs-zH-zoo">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="OGs-zH-zoo">
                                             <rect key="frame" x="15" y="0.0" width="290" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

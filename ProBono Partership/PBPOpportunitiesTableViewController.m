@@ -13,6 +13,8 @@
 #import "PBPOpportunityViewController.h"
 #import "PBPOpportunityTableViewController.h"
 
+static NSString *CellIdentifier = @"Cell";
+
 @interface PBPOpportunitiesTableViewController ()
 
 @end
@@ -176,7 +178,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // get model object
@@ -189,6 +190,30 @@
     cell.textLabel.text = opportunity.work;
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger xPadding = 15;
+    
+    NSUInteger yPadding = 15;
+    
+    CGSize maxSize = CGSizeMake(self.tableView.frame.size.width - (2 * xPadding),
+                                NSIntegerMax);
+    
+    // get model object
+    NSArray *subOpportunities = _groupedOpportunities[indexPath.section];
+    
+    PBPOpportunity *opportunity = subOpportunities[indexPath.row];
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:17]};
+    
+    CGRect rect = [opportunity.work boundingRectWithSize:maxSize
+                                                 options:NSStringDrawingUsesLineFragmentOrigin
+                                              attributes:attributes
+                                                 context:nil];
+    
+    return rect.size.height + (2 * yPadding);
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

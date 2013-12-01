@@ -21,4 +21,5 @@
 -(void)loadOpportunities:(NSArray *)opportunities
                  sorting:(PBPOpportunitiesSorting)sorting;
 
+
 @end

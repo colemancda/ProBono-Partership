@@ -477,7 +477,6 @@
 				6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */,
 				6E93F79E1849CBB4001497A7 /* PBPState.m in Sources */,
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
-				6E7B6AA9184A698C00224965 /* PBPOpportunity+UIActivityItemSource.m in Sources */,
 				6E93F7A11849CBB4001497A7 /* PBPOpportunity.m in Sources */,
 				6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */,
 				6E93F79B1849CBB3001497A7 /* PBPCategory.m in Sources */,
@@ -486,6 +485,7 @@
 				6E7B6AAC184A756A00224965 /* ProBonoRequestActivity.m in Sources */,
 				6E7B6A92184A4D9000224965 /* PBPStatesViewController.m in Sources */,
 				6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */,
+				6E7B6AA9184A698C00224965 /* PBPOpportunity+UIActivityItemSource.m in Sources */,
 				6E7B6A98184A4DC200224965 /* PBPOpportunityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,6 +46,7 @@ NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
     // create mail VC
     
     _mailVC = [[MFMailComposeViewController alloc] init];
+    
 }
 
 -(UIViewController *)activityViewController
