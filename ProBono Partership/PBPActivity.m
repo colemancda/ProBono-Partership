@@ -32,7 +32,7 @@ NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
 
 -(UIImage *)activityImage
 {
-    return [UIImage imageNamed:@"Squarelogo"];
+    return [UIImage imageNamed:@"PBPActivityImage"];
 }
 
 -(BOOL)canPerformWithActivityItems:(NSArray *)activityItems
