@@ -1,17 +1,16 @@
 //
-//  ProBonoRequestActivity.m
+//  PBPActivity.m
 //  ProBono Partership
 //
-//  Created by Alsey Coleman Miller on 11/30/13.
+//  Created by Alsey Coleman Miller on 12/1/13.
 //  Copyright (c) 2013 CDA. All rights reserved.
 //
 
-#import "ProBonoRequestActivity.h"
-#import "PBPOpportunity.h"
+#import "PBPActivity.h"
 
 NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
 
-@implementation ProBonoRequestActivity
+@implementation PBPActivity
 
 -(NSString *)activityType
 {
@@ -47,6 +46,7 @@ NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
     
     _mailVC = [[MFMailComposeViewController alloc] init];
     
+    _mailVC.mailComposeDelegate = self;
 }
 
 -(UIViewController *)activityViewController
@@ -58,12 +58,9 @@ NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
+    // dismiss mail VC
     
-    [controller dismissViewControllerAnimated:YES completion:^{
-        
-        
-        
-    }];
+    [self activityDidFinish:(BOOL)error];
 }
 
 @end

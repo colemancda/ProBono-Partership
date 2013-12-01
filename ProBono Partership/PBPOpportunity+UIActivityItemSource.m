@@ -9,7 +9,7 @@
 #import "PBPOpportunity+UIActivityItemSource.h"
 #import "PBPState.h"
 #import "PBPCategory.h"
-#import "ProBonoRequestActivity.h"
+#import "PBPActivity.h"
 
 @implementation PBPOpportunity (UIActivityItemSource)
 

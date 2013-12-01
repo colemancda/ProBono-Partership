@@ -12,7 +12,6 @@
 		6E7B6A98184A4DC200224965 /* PBPOpportunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B6A97184A4DC200224965 /* PBPOpportunityViewController.m */; };
 		6E7B6A9B184A4E3800224965 /* PBPOpportunityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B6A9A184A4E3800224965 /* PBPOpportunityTableViewController.m */; };
 		6E7B6AA9184A698C00224965 /* PBPOpportunity+UIActivityItemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B6AA8184A698C00224965 /* PBPOpportunity+UIActivityItemSource.m */; };
-		6E7B6AAC184A756A00224965 /* ProBonoRequestActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B6AAB184A756A00224965 /* ProBonoRequestActivity.m */; };
 		6E8383611830074B003AE302 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8383601830074B003AE302 /* CoreData.framework */; };
 		6E83836718300DD5003AE302 /* PBPStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E83836618300DD5003AE302 /* PBPStore.m */; };
 		6E93F79B1849CBB3001497A7 /* PBPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93F79A1849CBB3001497A7 /* PBPCategory.m */; };
@@ -39,6 +38,7 @@
 		6EBF19DD1844698A003CF0AA /* PBPCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DC1844698A003CF0AA /* PBPCategoriesViewController.m */; };
 		6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19DF1845889D003CF0AA /* NSError+presentError.m */; };
 		6EBF19E418459550003CF0AA /* PBPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */; };
+		6ED68D27184B143B008C592E /* PBPActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED68D26184B143B008C592E /* PBPActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +62,6 @@
 		6E7B6A9A184A4E3800224965 /* PBPOpportunityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPOpportunityTableViewController.m; sourceTree = "<group>"; };
 		6E7B6AA7184A698C00224965 /* PBPOpportunity+UIActivityItemSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PBPOpportunity+UIActivityItemSource.h"; sourceTree = "<group>"; };
 		6E7B6AA8184A698C00224965 /* PBPOpportunity+UIActivityItemSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PBPOpportunity+UIActivityItemSource.m"; sourceTree = "<group>"; };
-		6E7B6AAA184A756A00224965 /* ProBonoRequestActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProBonoRequestActivity.h; sourceTree = "<group>"; };
-		6E7B6AAB184A756A00224965 /* ProBonoRequestActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProBonoRequestActivity.m; sourceTree = "<group>"; };
 		6E8383601830074B003AE302 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6E83836518300DD5003AE302 /* PBPStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPStore.h; sourceTree = "<group>"; };
 		6E83836618300DD5003AE302 /* PBPStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPStore.m; sourceTree = "<group>"; };
@@ -105,6 +103,8 @@
 		6EBF19DF1845889D003CF0AA /* NSError+presentError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+presentError.m"; sourceTree = "<group>"; };
 		6EBF19E218459550003CF0AA /* PBPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPSettingsViewController.h; sourceTree = "<group>"; };
 		6EBF19E318459550003CF0AA /* PBPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPSettingsViewController.m; sourceTree = "<group>"; };
+		6ED68D25184B143B008C592E /* PBPActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPActivity.h; sourceTree = "<group>"; };
+		6ED68D26184B143B008C592E /* PBPActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPActivity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,8 +318,8 @@
 				6EAA7942182FDA62008BA55B /* View Controllers */,
 				6EAA7943182FDA90008BA55B /* PBPAPI.h */,
 				6EAA7944182FDA90008BA55B /* PBPAPI.m */,
-				6E7B6AAA184A756A00224965 /* ProBonoRequestActivity.h */,
-				6E7B6AAB184A756A00224965 /* ProBonoRequestActivity.m */,
+				6ED68D25184B143B008C592E /* PBPActivity.h */,
+				6ED68D26184B143B008C592E /* PBPActivity.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -482,11 +482,11 @@
 				6E93F79B1849CBB3001497A7 /* PBPCategory.m in Sources */,
 				6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */,
 				6E7B6A9B184A4E3800224965 /* PBPOpportunityTableViewController.m in Sources */,
-				6E7B6AAC184A756A00224965 /* ProBonoRequestActivity.m in Sources */,
 				6E7B6A92184A4D9000224965 /* PBPStatesViewController.m in Sources */,
 				6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */,
 				6E7B6AA9184A698C00224965 /* PBPOpportunity+UIActivityItemSource.m in Sources */,
 				6E7B6A98184A4DC200224965 /* PBPOpportunityViewController.m in Sources */,
+				6ED68D27184B143B008C592E /* PBPActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

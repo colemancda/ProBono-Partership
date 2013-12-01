@@ -1,8 +1,8 @@
 //
-//  ProBonoRequestActivity.h
+//  PBPActivity.h
 //  ProBono Partership
 //
-//  Created by Alsey Coleman Miller on 11/30/13.
+//  Created by Alsey Coleman Miller on 12/1/13.
 //  Copyright (c) 2013 CDA. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 extern NSString *const ProBonoRequestActivityType;
 
-@interface ProBonoRequestActivity : UIActivity <MFMailComposeViewControllerDelegate>
+@interface PBPActivity : UIActivity <MFMailComposeViewControllerDelegate>
 {
     MFMailComposeViewController *_mailVC;
 }
