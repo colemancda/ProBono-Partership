@@ -208,6 +208,12 @@ NSString *const PBPAPIOpportunitiesStateParameter = @"PBPAPIOpportunitiesStatePa
             return;
         }
         
+        // try to get JSON object first
+        
+        NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data
+                                                               options:NSJSONReadingAllowFragments
+                                                                 error:nil];
+        
         NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
         // the JSON response is crap, it doesnt escape quotes, need to escape quotes
@@ -242,13 +248,14 @@ NSString *const PBPAPIOpportunitiesStateParameter = @"PBPAPIOpportunitiesStatePa
         jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\"\\\""
                                                            withString:@"\"\""];
         
+        
         // reserialize
         
         data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         
-        NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data
-                                                               options:NSJSONReadingAllowFragments
-                                                                 error:nil];
+        jsonObjects = [NSJSONSerialization JSONObjectWithData:data
+                                                      options:NSJSONReadingAllowFragments
+                                                        error:nil];
         
         if (!jsonObjects || ![jsonObjects isKindOfClass:[NSArray class]]) {
             
