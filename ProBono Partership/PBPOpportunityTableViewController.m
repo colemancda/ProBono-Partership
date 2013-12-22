@@ -10,6 +10,7 @@
 #import "PBPOpportunity.h"
 #import "PBPState.h"
 #import "PBPCategory.h"
+#import "NSString+HTML.h"
 
 @interface PBPOpportunityTableViewController ()
 
@@ -38,7 +39,7 @@
     
     self.workTextField.text = self.opportunity.work;
     
-    [self.missionWebView loadHTMLString:self.opportunity.mission baseURL:nil];
+    self.missionTextField.text = [self.opportunity.mission stringByConvertingHTMLToPlainText];
     
     [self.tableView reloadData];
 }
@@ -48,7 +49,19 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // work cell
-    if (indexPath.row == 6) {
+    if (indexPath.row == 6 || indexPath.row == 2) {
+        
+        NSString *string;
+        
+        if (indexPath.row == 6) {
+            
+            string = self.opportunity.work;
+        }
+        
+        if (indexPath.row == 2) {
+            
+            string = [self.opportunity.mission stringByConvertingHTMLToPlainText];
+        }
         
         NSUInteger xPadding = 15;
         
@@ -59,10 +72,10 @@
         
         NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:17]};
         
-        CGRect rect = [self.opportunity.work boundingRectWithSize:maxSize
-                                                          options:NSStringDrawingUsesLineFragmentOrigin
-                                                       attributes:attributes
-                                                          context:nil];
+        CGRect rect = [string boundingRectWithSize:maxSize
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:attributes
+                                           context:nil];
         
         return rect.size.height + (2 * yPadding);
         
@@ -71,19 +84,5 @@
     return tableView.rowHeight;
 }
 
-#pragma mark - WebView
-
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
-    
-    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-        
-        [[UIApplication sharedApplication] openURL:request.URL];
-        
-        return NO;
-    }
-    
-    return YES;
-}
 
 @end

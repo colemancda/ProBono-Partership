@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0CCBCB1867953F0072FD26 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CCBCA1867953F0072FD26 /* NSString+HTML.m */; };
+		6E0CCBCE186795AB0072FD26 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CCBCD186795AB0072FD26 /* GTMNSString+HTML.m */; };
 		6E7B6A92184A4D9000224965 /* PBPStatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B6A91184A4D9000224965 /* PBPStatesViewController.m */; };
 		6E7B6A95184A4DA900224965 /* PBPStatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B6A94184A4DA900224965 /* PBPStatesTableViewController.m */; };
 		6E7B6A98184A4DC200224965 /* PBPOpportunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B6A97184A4DC200224965 /* PBPOpportunityViewController.m */; };
@@ -52,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0CCBC91867953F0072FD26 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		6E0CCBCA1867953F0072FD26 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		6E0CCBCC186795AB0072FD26 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		6E0CCBCD186795AB0072FD26 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		6E7B6A90184A4D9000224965 /* PBPStatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPStatesViewController.h; sourceTree = "<group>"; };
 		6E7B6A91184A4D9000224965 /* PBPStatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPStatesViewController.m; sourceTree = "<group>"; };
 		6E7B6A93184A4DA900224965 /* PBPStatesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPStatesTableViewController.h; sourceTree = "<group>"; };
@@ -361,6 +367,10 @@
 		6EBF19E1184588A3003CF0AA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				6E0CCBCC186795AB0072FD26 /* GTMNSString+HTML.h */,
+				6E0CCBCD186795AB0072FD26 /* GTMNSString+HTML.m */,
+				6E0CCBC91867953F0072FD26 /* NSString+HTML.h */,
+				6E0CCBCA1867953F0072FD26 /* NSString+HTML.m */,
 				6EBF19DE1845889D003CF0AA /* NSError+presentError.h */,
 				6EBF19DF1845889D003CF0AA /* NSError+presentError.m */,
 			);
@@ -477,10 +487,12 @@
 				6EBF19DA18446952003CF0AA /* PBPOpportunitiesViewController.m in Sources */,
 				6E93F79E1849CBB4001497A7 /* PBPState.m in Sources */,
 				6EAA7919182F3A05008BA55B /* PBPAppDelegate.m in Sources */,
+				6E0CCBCB1867953F0072FD26 /* NSString+HTML.m in Sources */,
 				6E93F7A11849CBB4001497A7 /* PBPOpportunity.m in Sources */,
 				6EBF19E01845889D003CF0AA /* NSError+presentError.m in Sources */,
 				6E93F79B1849CBB3001497A7 /* PBPCategory.m in Sources */,
 				6EAA7941182FDA43008BA55B /* PBPModel.xcdatamodeld in Sources */,
+				6E0CCBCE186795AB0072FD26 /* GTMNSString+HTML.m in Sources */,
 				6E7B6A9B184A4E3800224965 /* PBPOpportunityTableViewController.m in Sources */,
 				6E7B6A92184A4D9000224965 /* PBPStatesViewController.m in Sources */,
 				6EA00A531846B81A00733C7B /* PBPCategoriesTableViewController.m in Sources */,

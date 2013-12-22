@@ -10,6 +10,7 @@
 #import "PBPState.h"
 #import "PBPCategory.h"
 #import "PBPActivity.h"
+#import "NSString+HTML.h"
 
 @implementation PBPOpportunity (UIActivityItemSource)
 
@@ -47,7 +48,7 @@
     
     // for all others
     
-    text = [NSString stringWithFormat:NSLocalizedString(@"Client: %@\nWork: %@\nCategory: %@\n Location: %@, %@\nMatter Number: %@", @"Default representation of PBPOpportunity"), self.client, self.work, self.category.name, self.city, self.state.name, self.matterNumber];
+    text = [NSString stringWithFormat:NSLocalizedString(@"Client: %@\nWork: %@\nCategory: %@\n Location: %@, %@\nMatter Number: %@\nMission: %@", @"Default representation of PBPOpportunity"), self.client, self.work, self.category.name, self.city, self.state.name, self.matterNumber, [self.mission stringByConvertingHTMLToPlainText]];
     
     return text;
 }

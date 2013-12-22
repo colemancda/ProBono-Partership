@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class PBPOpportunity;
 
-@interface PBPOpportunityTableViewController : UITableViewController <UIWebViewDelegate>
+@interface PBPOpportunityTableViewController : UITableViewController
 
 @property PBPOpportunity *opportunity;
 
@@ -27,7 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *workTextField;
 
-@property (weak, nonatomic) IBOutlet UIWebView *missionWebView;
+@property (weak, nonatomic) IBOutlet UILabel *missionTextField;
 
 -(void)loadUI;
 
