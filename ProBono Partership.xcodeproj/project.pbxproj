@@ -138,6 +138,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E0FFF8418679F6E00395966 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		6E7B6A9C184A4E4100224965 /* Opportunities VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +283,7 @@
 		6EAA790E182F3A05008BA55B /* ProBono Partership */ = {
 			isa = PBXGroup;
 			children = (
+				6E0FFF8418679F6E00395966 /* iPad */,
 				6EAA7917182F3A05008BA55B /* PBPAppDelegate.h */,
 				6EAA7918182F3A05008BA55B /* PBPAppDelegate.m */,
 				6EAA7937182F3F5E008BA55B /* MainStoryboard.storyboard */,
@@ -622,8 +630,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -638,8 +648,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
