@@ -42,9 +42,7 @@ NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
 
 -(BOOL)canPerformWithActivityItems:(NSArray *)activityItems
 {
-    // verify that the items are PBPOpportunities
-    
-    // verify that the user's email is set in preferences
+    // verify that the items are PBPOpportunities...
     
     return YES;
 }
@@ -67,6 +65,10 @@ NSString *const ProBonoRequestActivityType = @"ProBonoRequest";
     PBPOpportunity *opportunity = activityItems.firstObject;
     
     NSString *messageBody = [NSString stringWithFormat:NSLocalizedString(@"I would like to request more infomation about the following volunteer opportunity:<br /><br />Client: %@<br /><br />Work: %@<br /><br />Category: %@<br /><br /> Location: %@, %@<br /><br />Matter Number: %@<br /><br />Mission: %@", @"PBPActivity Request info message body"), opportunity.client, opportunity.work, opportunity.category.name, opportunity.city, opportunity.state.name, opportunity.matterNumber, opportunity.mission];
+    
+    // append user info
+    
+    
     
     [_mailVC setMessageBody:messageBody
                      isHTML:YES];

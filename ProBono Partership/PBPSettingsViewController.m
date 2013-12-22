@@ -12,8 +12,6 @@ NSString* const PBPFirstNamePreferenceKey = @"FirstName";
 
 NSString* const PBPLastNamePreferenceKey = @"LastName";
 
-NSString* const PBPEmailPreferenceKey = @"Email";
-
 NSString* const PBPPhoneNumberPreferenceKey = @"PhoneNumber";
 
 NSString* const PBPFirmPreferenceKey = @"Firm";
@@ -78,11 +76,6 @@ NSString* const PBPOpportunitiesSortingPreferenceKey = @"OpportunitiesSorting";
         key = PBPLastNamePreferenceKey;
     }
     
-    if (textField == self.emailTextField) {
-        
-        key = PBPEmailPreferenceKey;
-    }
-    
     if (textField == self.phoneNumberTextField) {
         
         key = PBPPhoneNumberPreferenceKey;
@@ -109,9 +102,7 @@ NSString* const PBPOpportunitiesSortingPreferenceKey = @"OpportunitiesSorting";
     self.firstNameTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PBPFirstNamePreferenceKey];
     
     self.lastNameTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PBPLastNamePreferenceKey];
-    
-    self.emailTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PBPEmailPreferenceKey];
-    
+        
     self.phoneNumberTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PBPPhoneNumberPreferenceKey];
     
     self.firmTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:PBPFirmPreferenceKey];

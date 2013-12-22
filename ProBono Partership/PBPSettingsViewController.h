@@ -12,8 +12,6 @@ extern NSString* const PBPFirstNamePreferenceKey;
 
 extern NSString* const PBPLastNamePreferenceKey;
 
-extern NSString* const PBPEmailPreferenceKey;
-
 extern NSString* const PBPPhoneNumberPreferenceKey;
 
 extern NSString* const PBPFirmPreferenceKey;
