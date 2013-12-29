@@ -22,6 +22,12 @@
 -(id)activityViewController:(UIActivityViewController *)activityViewController
         itemForActivityType:(NSString *)activityType
 {
+    
+    if ([activityType isEqualToString:ProBonoRequestActivityType]) {
+        
+        return self;
+    }
+    
     // defualt
     
     NSString *text = self.work;
@@ -39,11 +45,6 @@
         text = [NSString stringWithFormat:NSLocalizedString(@"%@\n%@, %@", @"Facebook representation of PBPOpportuntity"), self.work, self.city, self.state.name];
         
         return text;
-    }
-    
-    if ([activityType isEqualToString:ProBonoRequestActivityType]) {
-        
-        return self;
     }
     
     // for all others

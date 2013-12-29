@@ -435,6 +435,14 @@
 				TargetAttributes = {
 					6EAA7904182F3A04008BA55B = {
 						DevelopmentTeam = 4W79SG34MW;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+						};
 					};
 					6EAA791F182F3A05008BA55B = {
 						TestTargetID = 6EAA7904182F3A04008BA55B;
@@ -632,7 +640,7 @@
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C9243DD9-7288-464D-80DA-FC691F100593";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -650,7 +658,7 @@
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C9243DD9-7288-464D-80DA-FC691F100593";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
