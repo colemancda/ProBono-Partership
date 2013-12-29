@@ -28,30 +28,20 @@
         return self;
     }
     
-    // defualt
-    
-    NSString *text = self.work;
-    
     if ([activityType isEqualToString:UIActivityTypePostToTwitter]) {
         
-        text = [NSString stringWithFormat:@"%@ @PBPartnership", self.work];
-        
-        return text;
+        return [NSString stringWithFormat:@"%@ @PBPartnership", self.work];;
         
     }
     
     if ([activityType isEqualToString:UIActivityTypePostToFacebook]) {
         
-        text = [NSString stringWithFormat:NSLocalizedString(@"%@\n%@, %@", @"Facebook representation of PBPOpportuntity"), self.work, self.city, self.state.name];
-        
-        return text;
+        return [NSString stringWithFormat:NSLocalizedString(@"%@\n%@, %@", @"Facebook representation of PBPOpportuntity"), self.work, self.city, self.state.name];
     }
     
     // for all others
     
-    text = [NSString stringWithFormat:NSLocalizedString(@"Client: %@\nWork: %@\nCategory: %@\n Location: %@, %@\nMatter Number: %@\nMission: %@", @"Default representation of PBPOpportunity"), self.client, self.work, self.category.name, self.city, self.state.name, self.matterNumber, [self.mission stringByConvertingHTMLToPlainText]];
-    
-    return text;
+    return [NSString stringWithFormat:NSLocalizedString(@"Client: %@\nWork: %@\nCategory: %@\n Location: %@, %@\nMatter Number: %@\nMission: %@", @"Default representation of PBPOpportunity"), self.client, self.work, self.category.name, self.city, self.state.name, self.matterNumber, [self.mission stringByConvertingHTMLToPlainText]];
 }
 
 -(NSString *)activityViewController:(UIActivityViewController *)activityViewController subjectForActivityType:(NSString *)activityType
