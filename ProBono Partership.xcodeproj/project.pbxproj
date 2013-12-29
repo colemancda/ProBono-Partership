@@ -633,14 +633,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Robert Miller (4W79SG34MW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
-				PROVISIONING_PROFILE = "5404C675-40B9-4980-A252-CAD2DE004C4D";
+				PROVISIONING_PROFILE = "72053BC5-A9D0-4191-ACC9-D0164D25722D";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -651,14 +651,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Robert Miller (4W79SG34MW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
-				PROVISIONING_PROFILE = "5404C675-40B9-4980-A252-CAD2DE004C4D";
+				PROVISIONING_PROFILE = "72053BC5-A9D0-4191-ACC9-D0164D25722D";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
