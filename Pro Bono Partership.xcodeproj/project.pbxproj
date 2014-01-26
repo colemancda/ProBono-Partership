@@ -85,16 +85,16 @@
 		6EAA7908182F3A04008BA55B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EAA790A182F3A05008BA55B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6EAA790C182F3A05008BA55B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6EAA7910182F3A05008BA55B /* ProBono Partership-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProBono Partership-Info.plist"; sourceTree = "<group>"; };
+		6EAA7910182F3A05008BA55B /* Pro Bono Partership-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pro Bono Partership-Info.plist"; sourceTree = "<group>"; };
 		6EAA7912182F3A05008BA55B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6EAA7914182F3A05008BA55B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6EAA7916182F3A05008BA55B /* ProBono Partership-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProBono Partership-Prefix.pch"; sourceTree = "<group>"; };
+		6EAA7916182F3A05008BA55B /* Pro Bono Partership-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pro Bono Partership-Prefix.pch"; sourceTree = "<group>"; };
 		6EAA7917182F3A05008BA55B /* PBPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBPAppDelegate.h; sourceTree = "<group>"; };
 		6EAA7918182F3A05008BA55B /* PBPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBPAppDelegate.m; sourceTree = "<group>"; };
 		6EAA791A182F3A05008BA55B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6EAA7920182F3A05008BA55B /* ProBono PartershipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProBono PartershipTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EAA7920182F3A05008BA55B /* Pro Bono PartershipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pro Bono PartershipTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EAA7921182F3A05008BA55B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6EAA7929182F3A05008BA55B /* ProBono PartershipTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProBono PartershipTests-Info.plist"; sourceTree = "<group>"; };
+		6EAA7929182F3A05008BA55B /* Pro Bono PartershipTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pro Bono PartershipTests-Info.plist"; sourceTree = "<group>"; };
 		6EAA792B182F3A05008BA55B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6EAA792D182F3A05008BA55B /* ProBono_PartershipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProBono_PartershipTests.m; sourceTree = "<group>"; };
 		6EAA7937182F3F5E008BA55B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -252,8 +252,8 @@
 		6EAA78FC182F3A04008BA55B = {
 			isa = PBXGroup;
 			children = (
-				6EAA790E182F3A05008BA55B /* ProBono Partership */,
-				6EAA7927182F3A05008BA55B /* ProBono PartershipTests */,
+				6EAA790E182F3A05008BA55B /* Pro Bono Partership */,
+				6EAA7927182F3A05008BA55B /* Pro Bono PartershipTests */,
 				6EAA7907182F3A04008BA55B /* Frameworks */,
 				6EAA7906182F3A04008BA55B /* Products */,
 			);
@@ -263,7 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				6EAA7905182F3A04008BA55B /* ProBono.app */,
-				6EAA7920182F3A05008BA55B /* ProBono PartershipTests.xctest */,
+				6EAA7920182F3A05008BA55B /* Pro Bono PartershipTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6EAA790E182F3A05008BA55B /* ProBono Partership */ = {
+		6EAA790E182F3A05008BA55B /* Pro Bono Partership */ = {
 			isa = PBXGroup;
 			children = (
 				6E0FFF8418679F6E00395966 /* iPad */,
@@ -294,33 +294,35 @@
 				6EAA7939182F40A6008BA55B /* Controllers */,
 				6EAA790F182F3A05008BA55B /* Supporting Files */,
 			);
+			name = "Pro Bono Partership";
 			path = "ProBono Partership";
 			sourceTree = "<group>";
 		};
 		6EAA790F182F3A05008BA55B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6EAA7910182F3A05008BA55B /* ProBono Partership-Info.plist */,
+				6EAA7910182F3A05008BA55B /* Pro Bono Partership-Info.plist */,
 				6EAA7911182F3A05008BA55B /* InfoPlist.strings */,
 				6EAA7914182F3A05008BA55B /* main.m */,
-				6EAA7916182F3A05008BA55B /* ProBono Partership-Prefix.pch */,
+				6EAA7916182F3A05008BA55B /* Pro Bono Partership-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6EAA7927182F3A05008BA55B /* ProBono PartershipTests */ = {
+		6EAA7927182F3A05008BA55B /* Pro Bono PartershipTests */ = {
 			isa = PBXGroup;
 			children = (
 				6EAA792D182F3A05008BA55B /* ProBono_PartershipTests.m */,
 				6EAA7928182F3A05008BA55B /* Supporting Files */,
 			);
+			name = "Pro Bono PartershipTests";
 			path = "ProBono PartershipTests";
 			sourceTree = "<group>";
 		};
 		6EAA7928182F3A05008BA55B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6EAA7929182F3A05008BA55B /* ProBono PartershipTests-Info.plist */,
+				6EAA7929182F3A05008BA55B /* Pro Bono PartershipTests-Info.plist */,
 				6EAA792A182F3A05008BA55B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -330,8 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				6EAA7942182FDA62008BA55B /* View Controllers */,
-				6EAA7943182FDA90008BA55B /* PBPAPI.h */,
-				6EAA7944182FDA90008BA55B /* PBPAPI.m */,
 				6ED68D25184B143B008C592E /* PBPActivity.h */,
 				6ED68D26184B143B008C592E /* PBPActivity.m */,
 			);
@@ -341,6 +341,8 @@
 		6EAA793D182FDA1B008BA55B /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				6EAA7943182FDA90008BA55B /* PBPAPI.h */,
+				6EAA7944182FDA90008BA55B /* PBPAPI.m */,
 				6E83836518300DD5003AE302 /* PBPStore.h */,
 				6E83836618300DD5003AE302 /* PBPStore.m */,
 			);
@@ -388,9 +390,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6EAA7904182F3A04008BA55B /* ProBono Partership */ = {
+		6EAA7904182F3A04008BA55B /* Pro Bono Partership */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EAA7931182F3A05008BA55B /* Build configuration list for PBXNativeTarget "ProBono Partership" */;
+			buildConfigurationList = 6EAA7931182F3A05008BA55B /* Build configuration list for PBXNativeTarget "Pro Bono Partership" */;
 			buildPhases = (
 				6EAA7901182F3A04008BA55B /* Sources */,
 				6EAA7902182F3A04008BA55B /* Frameworks */,
@@ -400,14 +402,14 @@
 			);
 			dependencies = (
 			);
-			name = "ProBono Partership";
+			name = "Pro Bono Partership";
 			productName = "ProBono Partership";
 			productReference = 6EAA7905182F3A04008BA55B /* ProBono.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6EAA791F182F3A05008BA55B /* ProBono PartershipTests */ = {
+		6EAA791F182F3A05008BA55B /* Pro Bono PartershipTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EAA7934182F3A05008BA55B /* Build configuration list for PBXNativeTarget "ProBono PartershipTests" */;
+			buildConfigurationList = 6EAA7934182F3A05008BA55B /* Build configuration list for PBXNativeTarget "Pro Bono PartershipTests" */;
 			buildPhases = (
 				6EAA791C182F3A05008BA55B /* Sources */,
 				6EAA791D182F3A05008BA55B /* Frameworks */,
@@ -418,9 +420,9 @@
 			dependencies = (
 				6EAA7926182F3A05008BA55B /* PBXTargetDependency */,
 			);
-			name = "ProBono PartershipTests";
+			name = "Pro Bono PartershipTests";
 			productName = "ProBono PartershipTests";
-			productReference = 6EAA7920182F3A05008BA55B /* ProBono PartershipTests.xctest */;
+			productReference = 6EAA7920182F3A05008BA55B /* Pro Bono PartershipTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -431,7 +433,7 @@
 			attributes = {
 				CLASSPREFIX = PBP;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = CDA;
+				ORGANIZATIONNAME = "Pro Bono Partership";
 				TargetAttributes = {
 					6EAA7904182F3A04008BA55B = {
 						DevelopmentTeam = 4W79SG34MW;
@@ -449,7 +451,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6EAA7900182F3A04008BA55B /* Build configuration list for PBXProject "ProBono Partership" */;
+			buildConfigurationList = 6EAA7900182F3A04008BA55B /* Build configuration list for PBXProject "Pro Bono Partership" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -461,8 +463,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6EAA7904182F3A04008BA55B /* ProBono Partership */,
-				6EAA791F182F3A05008BA55B /* ProBono PartershipTests */,
+				6EAA7904182F3A04008BA55B /* Pro Bono Partership */,
+				6EAA791F182F3A05008BA55B /* Pro Bono PartershipTests */,
 			);
 		};
 /* End PBXProject section */
@@ -531,7 +533,7 @@
 /* Begin PBXTargetDependency section */
 		6EAA7926182F3A05008BA55B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6EAA7904182F3A04008BA55B /* ProBono Partership */;
+			target = 6EAA7904182F3A04008BA55B /* Pro Bono Partership */;
 			targetProxy = 6EAA7925182F3A05008BA55B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -636,8 +638,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
-				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
+				GCC_PREFIX_HEADER = "ProBono Partership/Pro Bono Partership-Prefix.pch";
+				INFOPLIST_FILE = "ProBono Partership/Pro Bono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
 				PROVISIONING_PROFILE = "72053BC5-A9D0-4191-ACC9-D0164D25722D";
@@ -654,8 +656,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
-				INFOPLIST_FILE = "ProBono Partership/ProBono Partership-Info.plist";
+				GCC_PREFIX_HEADER = "ProBono Partership/Pro Bono Partership-Prefix.pch";
+				INFOPLIST_FILE = "ProBono Partership/Pro Bono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = ProBono;
 				PROVISIONING_PROFILE = "72053BC5-A9D0-4191-ACC9-D0164D25722D";
@@ -680,8 +682,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ProBono PartershipTests/ProBono PartershipTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "ProBono PartershipTests/Pro Bono PartershipTests-Info.plist";
+				PRODUCT_NAME = "Pro Bono PartershipTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -699,8 +701,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProBono Partership/ProBono Partership-Prefix.pch";
-				INFOPLIST_FILE = "ProBono PartershipTests/ProBono PartershipTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "ProBono PartershipTests/Pro Bono PartershipTests-Info.plist";
+				PRODUCT_NAME = "Pro Bono PartershipTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -709,7 +711,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6EAA7900182F3A04008BA55B /* Build configuration list for PBXProject "ProBono Partership" */ = {
+		6EAA7900182F3A04008BA55B /* Build configuration list for PBXProject "Pro Bono Partership" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EAA792F182F3A05008BA55B /* Debug */,
@@ -718,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EAA7931182F3A05008BA55B /* Build configuration list for PBXNativeTarget "ProBono Partership" */ = {
+		6EAA7931182F3A05008BA55B /* Build configuration list for PBXNativeTarget "Pro Bono Partership" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EAA7932182F3A05008BA55B /* Debug */,
@@ -727,7 +729,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EAA7934182F3A05008BA55B /* Build configuration list for PBXNativeTarget "ProBono PartershipTests" */ = {
+		6EAA7934182F3A05008BA55B /* Build configuration list for PBXNativeTarget "Pro Bono PartershipTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EAA7935182F3A05008BA55B /* Debug */,

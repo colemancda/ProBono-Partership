@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
                BuildableName = "ProBono.app"
-               BlueprintName = "ProBono Partership"
-               ReferencedContainer = "container:ProBono Partership.xcodeproj">
+               BlueprintName = "Pro Bono Partership"
+               ReferencedContainer = "container:Pro Bono Partership.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6EAA791F182F3A05008BA55B"
-               BuildableName = "ProBono PartershipTests.xctest"
-               BlueprintName = "ProBono PartershipTests"
-               ReferencedContainer = "container:ProBono Partership.xcodeproj">
+               BuildableName = "Pro Bono PartershipTests.xctest"
+               BlueprintName = "Pro Bono PartershipTests"
+               ReferencedContainer = "container:Pro Bono Partership.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
             BuildableName = "ProBono.app"
-            BlueprintName = "ProBono Partership"
-            ReferencedContainer = "container:ProBono Partership.xcodeproj">
+            BlueprintName = "Pro Bono Partership"
+            ReferencedContainer = "container:Pro Bono Partership.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
             BuildableName = "ProBono.app"
-            BlueprintName = "ProBono Partership"
-            ReferencedContainer = "container:ProBono Partership.xcodeproj">
+            BlueprintName = "Pro Bono Partership"
+            ReferencedContainer = "container:Pro Bono Partership.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EAA7904182F3A04008BA55B"
             BuildableName = "ProBono.app"
-            BlueprintName = "ProBono Partership"
-            ReferencedContainer = "container:ProBono Partership.xcodeproj">
+            BlueprintName = "Pro Bono Partership"
+            ReferencedContainer = "container:Pro Bono Partership.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

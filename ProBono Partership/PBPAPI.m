@@ -212,40 +212,15 @@ NSString *const PBPAPIOpportunitiesStateParameter = @"PBPAPIOpportunitiesStatePa
         
         // the JSON response is crap, it doesnt escape quotes, need to escape quotes
         
-        // replace " with \"
+        NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>" options:NSRegularExpressionCaseInsensitive error:nil];
         
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\""
-                                                           withString:@"\\\""];
+        NSTextCheckingResult *result = [expression firstMatchInString:jsonString options:0 range:NSRangeFromString(jsonString)];
         
-        // dont escape special json quotes
-        
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"{\\\""
-                                                           withString:@"{\""];
-        
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"}\\\""
-                                                           withString:@"}\""];
-        
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@":\\\""
-                                                           withString:@":\""];
-        
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\\\":"
-                                                           withString:@"\":"];
-        
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@",\\\""
-                                                           withString:@",\""];
-        
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\\\","
-                                                           withString:@"\","];
-        
-        // for Updated: key "\"
-        
-        jsonString = [jsonString stringByReplacingOccurrencesOfString:@"\"\\\""
-                                                           withString:@"\"\""];
-        
+        NSString *newString = [jsonString substringWithRange:result.range];
         
         // reserialize
         
-        data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        data = [newString dataUsingEncoding:NSUTF8StringEncoding];
         
         NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data
                                                                options:NSJSONReadingAllowFragments
