@@ -641,7 +641,7 @@
 				GCC_PREFIX_HEADER = "ProBono Partership/Pro Bono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/Pro Bono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = ProBono;
+				PRODUCT_NAME = "Pro Bono Partnership";
 				PROVISIONING_PROFILE = "72053BC5-A9D0-4191-ACC9-D0164D25722D";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -659,7 +659,7 @@
 				GCC_PREFIX_HEADER = "ProBono Partership/Pro Bono Partership-Prefix.pch";
 				INFOPLIST_FILE = "ProBono Partership/Pro Bono Partership-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = ProBono;
+				PRODUCT_NAME = "Pro Bono Partnership";
 				PROVISIONING_PROFILE = "72053BC5-A9D0-4191-ACC9-D0164D25722D";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
