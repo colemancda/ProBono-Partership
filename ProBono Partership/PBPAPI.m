@@ -8,6 +8,7 @@
 
 #import "PBPAPI.h"
 #import "PBPAppDelegate.h"
+#import "NSString+HTML.h"
 
 NSString *const PBPAPIOpportunitiesCategoryParameter = @"PBPAPIOpportunitiesCategoryParameter";
 
@@ -210,17 +211,13 @@ NSString *const PBPAPIOpportunitiesStateParameter = @"PBPAPIOpportunitiesStatePa
         
         NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
-        // the JSON response is crap, it doesnt escape quotes, need to escape quotes
+        // the JSON response is messed up, need to clean it up
         
-        NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>" options:NSRegularExpressionCaseInsensitive error:nil];
-        
-        NSTextCheckingResult *result = [expression firstMatchInString:jsonString options:0 range:NSRangeFromString(jsonString)];
-        
-        NSString *newString = [jsonString substringWithRange:result.range];
+        jsonString = [jsonString stringByConvertingHTMLToPlainText];
         
         // reserialize
         
-        data = [newString dataUsingEncoding:NSUTF8StringEncoding];
+        data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         
         NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:data
                                                                options:NSJSONReadingAllowFragments

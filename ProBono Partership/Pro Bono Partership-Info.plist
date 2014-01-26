@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Pro Bono</string>
+	<string>PBP</string>
 	<key>CFBundleExecutable</key>
-	<string>Pro Bono</string>
+	<string>ProBono</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.probonopartner.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Pro Bono</string>
+	<string>ProBono</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

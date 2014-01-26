@@ -39,7 +39,7 @@
     
     self.workTextField.text = self.opportunity.work;
     
-    self.missionTextField.text = [self.opportunity.mission stringByConvertingHTMLToPlainText];
+    self.missionTextField.text = self.opportunity.mission;
     
     [self.tableView reloadData];
 }
@@ -60,7 +60,7 @@
         
         if (indexPath.row == 2) {
             
-            string = [self.opportunity.mission stringByConvertingHTMLToPlainText];
+            string = self.opportunity.mission;
         }
         
         NSUInteger xPadding = 15;
