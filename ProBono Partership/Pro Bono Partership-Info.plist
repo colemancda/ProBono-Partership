@@ -7,13 +7,13 @@
 	<key>CFBundleDisplayName</key>
 	<string>PBP</string>
 	<key>CFBundleExecutable</key>
-	<string>ProBono</string>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.probonopartner.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>ProBono</string>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
